@@ -12,7 +12,7 @@
 namespace Aya.Tween
 {
     [TweenerEditor(TweenTypeRubyTextMeshPro.RubyTextMeshPro)]
-    public class TweenRubyTextMeshProEditor : TweenFloatBaseEditor
+    public class TweenRubyTextMeshProEditor : TweenStringBaseEditor
     {
         public override int Type => TweenTypeRubyTextMeshPro.RubyTextMeshPro;
         public override int RequireCurveCount => 1;

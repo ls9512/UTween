@@ -12,7 +12,7 @@
 namespace Aya.Tween
 {
     [TweenerEditor(TweenTypeTextMeshPro.TextMeshPro)]
-    public class TweenTextMeshProEditor : TweenFloatBaseEditor
+    public class TweenTextMeshProEditor : TweenStringBaseEditor
     {
         public override int Type => TweenTypeTextMeshPro.TextMeshPro;
         public override int RequireCurveCount => 1;

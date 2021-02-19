@@ -1,5 +1,5 @@
 # UTween
-**UTween** 是一个 **Unity** 环境下的通用插值动画组件，可以通过内置组件快速配置或者代码快速创建简单动画效果。
+**UTween** 是一个 **Unity** 环境下的插值动画组件，可以通过内置组件快速配置动画，或者通过代码编写动画。
 
 ![topLanguage](https://img.shields.io/github/languages/top/ls9512/UTween)
 ![size](https://img.shields.io/github/languages/code-size/ls9512/UTween)
@@ -17,8 +17,6 @@
 	* 1.3. [功能预览](#-1)
 	* 1.4. [插件安装](#-1)
 * 2. [ 参数定义](#-1)
-	* 2.1. [通用参数](#-1)
-	* 2.2. [AUI 参数](#AUI)
 * 3. [内置功能](#-1)
 	* 3.1. [核心组件](#-1)
 		* 3.1.1. [Tweener](#Tweener)
@@ -39,7 +37,7 @@
 	* 6.3. [快速调用接口](#-1)
 	* 6.4. [原生组件扩展方法](#-1)
 	* 6.5. [顺序/并行](#-1)
-	* 6.6. [动态起始点](#-1)
+	* 6.6. [动态起止点](#-1)
 	* 6.7. [动画组](#-1)
 	* 6.8. [动画配置](#-1)
 * 7. [用户扩展](#-1)
@@ -61,10 +59,9 @@
 * 提供编辑器组件、配置文件以及代码调用三种使用模式。
 * 所有动画均可以导出保存为配置文件，以实现动画资源管理和重用。
 * 支持动态起始点，动画过程中动态调整参数（仅脚本模式可用）。
-* 提供基于 MaterialPropertyBlock 的高性能材质动画。
+* 提供基于 `MaterialPropertyBlock` 的高性能材质动画。
 * 除操作字符串相关的动画外，基本做到 0 GC。
 * 良好的链式编程支持。
-* 提供大量的原生组件扩展方法。
 
 ###  1.2. <a name='-1'></a>环境要求
 * Unity 2018.4.6f1 及以上
@@ -74,14 +71,19 @@
 添加组件，并使用丰富的内置动画和缓动函数：
 ![](/Res/UTween_TwweenType_EaseType.gif)
 
-支持每个轴向独立曲线；
+
+支持每个轴向独立曲线：
 ![](/Res/UTween_InspectorMultiCurve.png)
+
 
 编辑器实时预览动画，所见即所得：
 ![](/Res/UTween_EditorPreview.gif)
 
+
 内置曲线路径编辑器：
 ![](/Res/UTween_PathEditor.gif)
+
+
 ###  1.4. <a name='-1'></a>插件安装
 * 1. 获取该仓库的完整最新版本
 * 2. 删除 `/Extension` 文件夹中不需要的扩展
@@ -89,20 +91,17 @@
 * 4. 拷贝整个文件夹至 `Assets/Plugins/` 中
 
 ##  2. <a name='-1'></a> 参数定义
-###  2.1. <a name='-1'></a>通用参数
 * **From**: 插值的起始值
 * **To**: 插值的结束值
-* **Curve**: 插值的曲线，用于自定义插值过程的波动累乘量
+* **Curve**: 自定义插值动画曲线，会累乘于缓动函数的计算结果之上
 * **Curve Target**: 可选择曲线的运算结果作用在插值因子上还是插值结果数值上
 * **Curve Mode**: 可以选择单根曲线作用于整体或者每个轴使用单独的曲线控制
 * **Play Type**: 播放类型，可选 **Once, Loop, LoopCount, PingPong, PingPongCount**
-* **Ease Type**: 消除类型，默认为线性，可选效果较多，请自行测试，此处代码参考 NGUI
+* **Ease Type**: 内置缓动函数类型，默认为线性，可选效果较多，请自行测试。
 * **Loop Count**: 循环次数
 * **Duration:**: 插值过程持续时间，单位 s
-* **Interval**: 重复播放间隔时间，仅 Loop 和 PIngPong 模式可用
-* **Speed Based**: 基于速度而非时间插值，选中后 DUration 参数作为速度值使用
-  * 该参数仅在动画开始前设置有效
-  * 该参数仅对值类型插值有效
+* **Interval**: 重复播放间隔时间，仅 Loop 和 PingPong 模式可用
+* **Speed Based**: 基于速度而非时间插值，选中后 Duration 参数作为速度值使用
 
 * **Start Delay**: 插值开始的延迟时间，单位 s
 * **Auto Play**: 自动播放的时机，默认 None 不自动播放，可选 **Awake, Start, Enable**， 如果选择 Enable， 会被多次触发
@@ -195,8 +194,8 @@ Tweener 的编辑器类，用于在 **Inspector** 中配置动画，针对不同
 
 ##  4. <a name='-1'></a>执行流程
 * 准备所有必要参数.
-* 通过 RunTime / Duration 计算出插值因子，限制范围[0,1]and。
-* 将实际插值因子代入到 EasyType 中计算。
+* 通过 RunTime / Duration 计算出插值因子。
+* 将实际插值因子代入到对应 `EasyType` 的 `EaseFunction` 中计算。
 * 当 CurveMode == Factor 时，将差值因子乘上曲线计算结果。
 * 用最终得到的插值因子计算出插值结果数值。
 * 当 CurveMode == Value 时，将插值结果乘上曲线计算结果。
@@ -205,9 +204,9 @@ Tweener 的编辑器类，用于在 **Inspector** 中配置动画，针对不同
 ***
 
 ##  5. <a name='-1'></a>性能测试
-* 测试平台 : i5-8500 / 16GB DDR4 2666 / GTX 950 /Unity 2018.4.6f1
-* 1000 个 GameObject 在场景中依赖 TweenAnimation/TweenPosition 组件执行，每帧消耗CPU时间 3.21ms，同样环境和动画效果下 DOTween 为 2.51ms。
-* 除了启动时对象池为空，需要创建所有需要的 Tweener 对象，运行时大部分情况下 GC 为 0.
+* 测试平台 : i5-8500 / 16GB DDR4 2666 / GTX 950 / Unity 2019.4.6f1
+* 1000 个 GameObject 在场景中依赖 TweenAnimation/TweenPosition 组件执行，在编辑器模式下，Profier 统计每帧消耗CPU时间 3.21ms，同样环境和动画效果下 DOTween 为 2.51ms。
+* 除了启动时对象池为空，需要创建所有需要的 Tweener 对象，以及字符串相关操作，大部分情况下 GC 为 0.
 
 ***
 
@@ -279,7 +278,7 @@ UTween.GetParallel()
 	.Play();
 ```
 
-###  6.6. <a name='-1'></a>动态起始点
+###  6.6. <a name='-1'></a>动态起止点
 使用 `SetFromGetter / SetToGetter` 方法设置动态获取起点和终点的方法，并确保动画更新在起始点数值更新之后进行，就可以得到一个起点终点动态改变的插值动画：
 ```csharp
 public float FromValue = 0f;
