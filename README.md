@@ -64,25 +64,29 @@
 * Good chain programming support.
 
 ###  1.2. <a name='Environment'></a>Environment
-* Unity 2018.4.6f1 and above
+* Unity 2019.4.3f1 and above
 * .Net 4.x
 
 ###  1.3. <a name='Preview'></a>Preview
 Add components and use rich built-in animation and easing functions:
-![](/Res/UTween_TwweenType_EaseType.gif)
-
+<div style="align: center">
+<img src="/Res/UTween_TwweenType_EaseType.gif"/>
+</div>
 
 Support each axis independent curve:
-![](/Res/UTween_InspectorMultiCurve.png)
-
+<div style="align: center">
+<img src="/Res/UTween_InspectorMultiCurve.png"/>
+</div>
 
 The editor previews the animation in real time, what you see is what you get:
-![](/Res/UTween_EditorPreview.gif)
-
+<div style="align: center">
+<img src="/Res/UTween_EditorPreview.gif"/>
+</div>
 
 Built-in curve path editor:
-![](/Res/UTween_PathEditor.gif)
-
+<div style="align: center">
+<img src="/Res/UTween_PathEditor.gif"/>
+</div>
 
 ###  1.4. <a name='Install'></a>Install
 * 1. Get the full latest version of the repository
@@ -204,7 +208,7 @@ Animation configuration resource files based on `ScriptableObject` can be import
 ***
 
 ##  5. <a name='PerformanceTesting'></a>Performance Testing
-* Test platform: i5-8500 / 16GB DDR4 2666 / GTX 950 / Unity 2019.4.6f1
+* Test platform: i5-8500 / 16GB DDR4 2666 / GTX 950 / Unity 2019.4.3f1
 * 1000 GameObjects rely on the TweenAnimation/TweenPosition component to execute in the scene. In the editor mode, the Profier counts that each frame consumes 3.21ms of CPU time. Under the same environment and animation effects, DOTween is 2.51ms.
 * Except that the object pool is empty at startup, all required Tweener objects need to be created, as well as string-related operations. In most cases, the GC is 0.
 

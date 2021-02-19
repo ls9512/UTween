@@ -64,25 +64,29 @@
 * 良好的链式编程支持。
 
 ###  1.2. <a name='-1'></a>环境要求
-* Unity 2018.4.6f1 及以上
+* Unity 2019.4.3f1 及以上
 * .Net 4.x
 
 ###  1.3. <a name='-1'></a>功能预览
 添加组件，并使用丰富的内置动画和缓动函数：
-![](/Res/UTween_TwweenType_EaseType.gif)
-
+<div style="align: center">
+<img src="/Res/UTween_TwweenType_EaseType.gif"/>
+</div>
 
 支持每个轴向独立曲线：
-![](/Res/UTween_InspectorMultiCurve.png)
-
+<div style="align: center">
+<img src="Res/UTween_InspectorMultiCurve.png"/>
+</div>
 
 编辑器实时预览动画，所见即所得：
-![](/Res/UTween_EditorPreview.gif)
-
+<div style="align: center">
+<img src="/Res/UTween_EditorPreview.gif"/>
+</div>
 
 内置曲线路径编辑器：
-![](/Res/UTween_PathEditor.gif)
-
+<div style="align: center">
+<img src="/Res/UTween_PathEditor.gif"/>
+</div>
 
 ###  1.4. <a name='-1'></a>插件安装
 * 1. 获取该仓库的完整最新版本
@@ -204,7 +208,7 @@ Tweener 的编辑器类，用于在 **Inspector** 中配置动画，针对不同
 ***
 
 ##  5. <a name='-1'></a>性能测试
-* 测试平台 : i5-8500 / 16GB DDR4 2666 / GTX 950 / Unity 2019.4.6f1
+* 测试平台 : i5-8500 / 16GB DDR4 2666 / GTX 950 / Unity 2019.4.3f1
 * 1000 个 GameObject 在场景中依赖 TweenAnimation/TweenPosition 组件执行，在编辑器模式下，Profier 统计每帧消耗CPU时间 3.21ms，同样环境和动画效果下 DOTween 为 2.51ms。
 * 除了启动时对象池为空，需要创建所有需要的 Tweener 对象，以及字符串相关操作，大部分情况下 GC 为 0.
 
