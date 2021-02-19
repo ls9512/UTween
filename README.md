@@ -72,16 +72,16 @@
 
 ###  1.3. <a name='-1'></a>功能预览
 添加组件，并使用丰富的内置动画和缓动函数：
-![](/Doc/UTween_TwweenType_EaseType.gif)
+![](/Res/UTween_TwweenType_EaseType.gif)
 
 支持每个轴向独立曲线；
-![](/Doc/UTween_InspectorMultiCurve.png)
+![](/Res/UTween_InspectorMultiCurve.png)
 
 编辑器实时预览动画，所见即所得：
-![](/Doc/UTween_EditorPreview.gif)
+![](/Res/UTween_EditorPreview.gif)
 
 内置曲线路径编辑器：
-![](/Doc/UTween_PathEditor.gif)
+![](/Res/UTween_PathEditor.gif)
 ###  1.4. <a name='-1'></a>插件安装
 * 1. 获取该仓库的完整最新版本
 * 2. 删除 `/Extension` 文件夹中不需要的扩展
