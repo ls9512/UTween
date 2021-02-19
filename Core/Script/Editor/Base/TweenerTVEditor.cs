@@ -1,0 +1,17 @@
+﻿/////////////////////////////////////////////////////////////////////////////
+//
+//  Script   : TweenerTVEditor.cs
+//  Info     : TweenerTV 编辑器
+//  Author   : ls9512 2018
+//  E-mail   : ls9512@vip.qq.com
+//
+/////////////////////////////////////////////////////////////////////////////
+#if UNITY_EDITOR
+
+namespace Aya.Tween
+{
+    public abstract class TweenerTVEditor : TweenerEditor
+    {
+    }
+}
+#endif

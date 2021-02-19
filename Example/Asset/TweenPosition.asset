@@ -1,0 +1,223 @@
+%YAML 1.1
+%TAG !u! tag:unity3d.com,2011:
+--- !u!114 &11400000
+MonoBehaviour:
+  m_ObjectHideFlags: 0
+  m_CorrespondingSourceObject: {fileID: 0}
+  m_PrefabInstance: {fileID: 0}
+  m_PrefabAsset: {fileID: 0}
+  m_GameObject: {fileID: 0}
+  m_Enabled: 1
+  m_EditorHideFlags: 0
+  m_Script: {fileID: 11500000, guid: 238ce2e1f3f424b47a96bd0de055a269, type: 3}
+  m_Name: TweenPosition
+  m_EditorClassIdentifier: 
+  Param:
+    Type: 10
+    Identifier: 
+    FromFloat: 0
+    ToFloat: 1
+    FromVector2: {x: 0, y: 0}
+    ToVector2: {x: 1, y: 1}
+    FromVector3: {x: 4.5, y: 0, z: 0}
+    ToVector3: {x: 5.5, y: 0, z: 0}
+    FromVector4: {x: 0, y: 0, z: 0, w: 0}
+    ToVector4: {x: 0, y: 0, z: 0, w: 0}
+    FromColor: {r: 0, g: 0, b: 0, a: 1}
+    ToColor: {r: 1, g: 1, b: 1, a: 1}
+    FromQuaternion: {x: 0, y: 0, z: 0, w: 1}
+    ToQuaternion: {x: 0, y: 0, z: 0, w: 1}
+    FromRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    ToRect:
+      serializedVersion: 2
+      x: 0
+      y: 0
+      width: 0
+      height: 0
+    FromTransform: {fileID: 0}
+    ToTransform: {fileID: 0}
+    QueueVector3: []
+    QueueColor: []
+    CurveMode: 1
+    CurveTarget: 1
+    Curve:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 2
+        outSlope: 2
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 0
+        outSlope: 0
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    CurveX:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    CurveY:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    CurveZ:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    CurveW:
+      serializedVersion: 2
+      m_Curve:
+      - serializedVersion: 3
+        time: 0
+        value: 0
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      - serializedVersion: 3
+        time: 1
+        value: 1
+        inSlope: 1
+        outSlope: 1
+        tangentMode: 0
+        weightedMode: 0
+        inWeight: 0
+        outWeight: 0
+      m_PreInfinity: 2
+      m_PostInfinity: 2
+      m_RotationOrder: 4
+    PlayType: 30
+    EaseType: 0
+    LoopCount: 0
+    Duration: 0.5
+    Interval: 0
+    SpeedBased: 0
+    StartDelay: 0
+    AutoPlay: 0
+    UpdateType: 0
+    TimeScale: 1
+    TimeSmooth: 1
+    SelfScale: 1
+    AutoKill: 0
+    WorldSpace: 1
+    ColorLerpMode: 0
+    ColorBlockType: 1
+    PathMode: 1
+    ShakeArgs:
+      ShakePos: 1
+      PowerPos: {x: 1, y: 1, z: 1}
+      ShakeRot: 1
+      PowerRot: {x: 0, y: 0, z: 0}
+      ShakeScale: 1
+      PowerScale: {x: 0, y: 0, z: 0}
+      Count: 3
+    Control: 0
+    Trigger: 0
+    ResourcesIndex: 0
+    ResourcesKey: 
+    OnPlay:
+      m_PersistentCalls:
+        m_Calls: []
+    OnStop:
+      m_PersistentCalls:
+        m_Calls: []
+    OnValueFloat:
+      m_PersistentCalls:
+        m_Calls: []
+    OnValueVector2:
+      m_PersistentCalls:
+        m_Calls: []
+    OnValueVector3:
+      m_PersistentCalls:
+        m_Calls: []
+    OnValueVector4:
+      m_PersistentCalls:
+        m_Calls: []
+    OnValueColor:
+      m_PersistentCalls:
+        m_Calls: []
+    OnValueQuaternion:
+      m_PersistentCalls:
+        m_Calls: []
+    OnValueRect:
+      m_PersistentCalls:
+        m_Calls: []
