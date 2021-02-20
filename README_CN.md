@@ -1,4 +1,5 @@
-# UTween
+<img src="/Res/Logo_1200x284.png"/>
+
 **UTween** 是一个 **Unity** 环境下的插值动画组件，可以通过内置组件快速配置动画，或者通过代码编写动画。
 
 ![topLanguage](https://img.shields.io/github/languages/top/ls9512/UTween)

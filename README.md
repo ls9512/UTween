@@ -1,4 +1,5 @@
-# UTween
+<img src="/Res/Logo_1200x284.png"/>
+
 **UTween** is an interpolation animation component for **Unity**. You can quickly configure animations through built-in components or write animations through code.
 
 ![topLanguage](https://img.shields.io/github/languages/top/ls9512/UTween)
@@ -11,7 +12,7 @@
 [[中文文档]](README_CN.md)
 
 <!-- vscode-markdown-toc -->
-* 1. [Quick start](#Quickstart)
+* 1. [Quick Start](#QuickStart)
 	* 1.1. [Features](#Features)
 	* 1.2. [Environment](#Environment)
 	* 1.3. [Preview](#Preview)
@@ -51,7 +52,7 @@
 	/vscode-markdown-toc-config -->
 <!-- /vscode-markdown-toc -->
 
-##  1. <a name='Quickstart'></a>Quick start
+##  1. <a name='QuickStart'></a>Quick Start
 ###  1.1. <a name='Features'></a>Features
 * Provide detailed parameters to achieve high freedom of custom animation.
 * Built-in animation realization of translation, rotation, scaling, value, color, etc. of a large number of commonly used components.
@@ -363,7 +364,7 @@ public class TweenTextFontSize : TweenFloatBase<Text>
 	{
 		Component.fontSize = (int)value;
 #if UNITY_EDITOR
-		// 确保编辑器预览刷新
+		// Refresh for editor preview
 		if (!Application.isPlaying)
 		{
 			UnityEditor.EditorUtility.SetDirty(Component);

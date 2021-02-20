@@ -39,6 +39,7 @@ namespace Aya.Tween
         #endregion
 
         [Header("Icon")]
+        public Texture2D IconLogo;
         public Texture2D IconPlay;
         public Texture2D IconPause;
         public Texture2D IconRefresh;

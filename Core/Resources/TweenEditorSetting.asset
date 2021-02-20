@@ -12,6 +12,7 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: ef1c704e8e6509647bacb2ec6b42e749, type: 3}
   m_Name: TweenEditorSetting
   m_EditorClassIdentifier: 
+  IconLogo: {fileID: 2800000, guid: 6d048f6968a5d3d4a94457c136277103, type: 3}
   IconPlay: {fileID: 2800000, guid: c686fbed16129ed4e81babc55d689c56, type: 3}
   IconPause: {fileID: 2800000, guid: 9dd4b8cce4e39ec4ab80c6735da1bc11, type: 3}
   IconRefresh: {fileID: 2800000, guid: f4145439ba354c64f91a25ed628cf2e6, type: 3}

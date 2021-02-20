@@ -35,11 +35,11 @@ namespace Aya.Tween
                     Instance = FindObjectOfType<TweenManager>();
                     if (Instance == null)
                     {
-                        var hideFlag = TweenSetting.Ins.ShowManagerInHierarchy ? HideFlags.None : HideFlags.HideAndDontSave;
-                        var insName = nameof(TweenManager);
+                        var hideFlag = TweenSetting.Ins.ShowManagerObject ? HideFlags.None : HideFlags.HideAndDontSave;
+                        var insName = "UTween";
                         if (!Application.isPlaying)
                         {
-                            insName = "~" + nameof(TweenManager) + " (Editor)";
+                            insName = "UTween (Editor)";
                         }
 
                         var obj = new GameObject
@@ -47,6 +47,7 @@ namespace Aya.Tween
                             name = insName,
                             hideFlags = hideFlag,
                         };
+
                         Instance = obj.AddComponent<TweenManager>();
                     }
                 }
