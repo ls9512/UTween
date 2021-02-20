@@ -1,4 +1,6 @@
-<img src="/Res/Logo_1200x284.png"/>
+<div align="center">    
+<img src="/Res/Logo_1200x284.png" width = "480" height = "112"/>
+</div>
 
 **UTween** is an interpolation animation component for **Unity**. You can quickly configure animations through built-in components or write animations through code.
 
@@ -70,22 +72,22 @@
 
 ###  1.3. <a name='Preview'></a>Preview
 Add components and use rich built-in animation and easing functions:
-<div style="align: center">
+<div align="center">    
 <img src="/Res/UTween_TwweenType_EaseType.gif"/>
 </div>
 
 Support each axis independent curve:
-<div style="align: center">
+<div align="center">    
 <img src="/Res/UTween_InspectorMultiCurve.png"/>
 </div>
 
 The editor previews the animation in real time, what you see is what you get:
-<div style="align: center">
+<div align="center">    
 <img src="/Res/UTween_EditorPreview.gif"/>
 </div>
 
 Built-in curve path editor:
-<div style="align: center">
+<div align="center">    
 <img src="/Res/UTween_PathEditor.gif"/>
 </div>
 

@@ -1,4 +1,6 @@
-<img src="/Res/Logo_1200x284.png"/>
+<div align="center">    
+<img src="/Res/Logo_1200x284.png" width = "480" height = "112"/>
+</div>
 
 **UTween** 是一个 **Unity** 环境下的插值动画组件，可以通过内置组件快速配置动画，或者通过代码编写动画。
 
@@ -70,22 +72,22 @@
 
 ###  1.3. <a name='-1'></a>功能预览
 添加组件，并使用丰富的内置动画和缓动函数：
-<div style="align: center">
+<div align="center">    
 <img src="/Res/UTween_TwweenType_EaseType.gif"/>
 </div>
 
 支持每个轴向独立曲线：
-<div style="align: center">
+<div align="center">    
 <img src="Res/UTween_InspectorMultiCurve.png"/>
 </div>
 
 编辑器实时预览动画，所见即所得：
-<div style="align: center">
+<div align="center">    
 <img src="/Res/UTween_EditorPreview.gif"/>
 </div>
 
 内置曲线路径编辑器：
-<div style="align: center">
+<div align="center">    
 <img src="/Res/UTween_PathEditor.gif"/>
 </div>
 
