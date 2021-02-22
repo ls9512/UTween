@@ -4,12 +4,16 @@
 
 **UTween** is an interpolation animation component for **Unity**. You can quickly configure animations through built-in components or write animations through code.
 
+![license](https://img.shields.io/github/license/ls9512/UTween)
+[![Release Version](https://img.shields.io/badge/release-1.0.0-red.svg)](https://github.com/ls9512/UTween/releases)
 ![topLanguage](https://img.shields.io/github/languages/top/ls9512/UTween)
 ![size](https://img.shields.io/github/languages/code-size/ls9512/UTween)
-![issue](https://img.shields.io/github/issues/ls9512/UTween)
-![license](https://img.shields.io/github/license/ls9512/UTween)
 ![last](https://img.shields.io/github/last-commit/ls9512/UTween)
 [![996.icu](https://img.shields.io/badge/link-996.icu-red.svg)](https://996.icu)
+
+![issue](https://img.shields.io/github/issues/ls9512/UTween)
+[![PRs Welcome](https://img.shields.io/badge/PRs-welcome-brightgreen.svg)](https://github.com/ls9512/UTween/pulls)
+[![Updates](https://img.shields.io/badge/Platform-%20iOS%20%7C%20OS%20X%20%7C%20Android%20%7C%20Windows%20%7C%20Linux%20-brightgreen.svg)](https://github.com/ls9512/UTween)
 
 [[中文文档]](README_CN.md)
 
