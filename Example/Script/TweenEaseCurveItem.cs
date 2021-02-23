@@ -38,7 +38,7 @@ namespace Aya.Example
         public float Width { get; set; }
         public float Height { get; set; }
 
-        public bool IsPlaying { get; set; }
+        public bool IsPlaying { get; set; } = true;
         public bool IsPlayBackward { get; set; }
 
         public void Init(int easeType)
@@ -128,11 +128,6 @@ namespace Aya.Example
 
         public void Update()
         {
-            if (Input.GetKeyDown(KeyCode.Space))
-            {
-                IsPlaying = true;
-            }
-
             if (!IsPlaying) return;
             if (IsPlayBackward)
             {
@@ -148,10 +143,6 @@ namespace Aya.Example
                 if (_timer >= Duration)
                 {
                     _timer = 0f;
-                    IsPlaying = false;
-                    _duration = 0f;
-                    _value = 1f;
-                    Refresh();
                 }
             }
 

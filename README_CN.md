@@ -6,7 +6,7 @@
 
 
 ![license](https://img.shields.io/github/license/ls9512/UTween)
-[![Release Version](https://img.shields.io/badge/release-1.0.0-red.svg)](https://github.com/ls9512/UTween/releases)
+[![Release Version](https://img.shields.io/badge/release-1.0.1-red.svg)](https://github.com/ls9512/UTween/releases)
 ![topLanguage](https://img.shields.io/github/languages/top/ls9512/UTween)
 ![size](https://img.shields.io/github/languages/code-size/ls9512/UTween)
 ![last](https://img.shields.io/github/last-commit/ls9512/UTween)
