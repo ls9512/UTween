@@ -80,6 +80,11 @@ Add components and use rich built-in animation and easing functions:
 <img src="/Res/UTween_TwweenType_EaseType.gif"/>
 </div>
 
+Build-in ease functions:
+<div align="center">    
+<img src="/Res/UTween_EaseCurvePreview.gif"/>
+</div>
+
 Support each axis independent curve:
 <div align="center">    
 <img src="/Res/UTween_InspectorMultiCurve.png"/>

@@ -81,6 +81,11 @@
 <img src="/Res/UTween_TwweenType_EaseType.gif"/>
 </div>
 
+内置缓动函数：
+<div align="center">    
+<img src="/Res/UTween_EaseCurvePreview.gif"/>
+</div>
+
 支持每个轴向独立曲线：
 <div align="center">    
 <img src="Res/UTween_InspectorMultiCurve.png"/>
