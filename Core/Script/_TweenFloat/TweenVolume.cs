@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace Aya.Tween
 {
-	[RequireComponents(typeof(AudioSource))]
+	[RequireComponent(typeof(AudioSource))]
     [Tweener(TweenType.Volume)]
     public class TweenVolume : TweenFloatBase<AudioSource>
 	{

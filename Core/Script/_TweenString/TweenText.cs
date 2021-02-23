@@ -8,11 +8,12 @@
 //  E-mail   : ls9512@vip.qq.com
 //
 /////////////////////////////////////////////////////////////////////////////
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Aya.Tween 
 {
-	[RequireComponents(typeof(Text))]
+	[RequireComponent(typeof(Text))]
     [Tweener(TweenType.Text)]
     public class TweenText : TweenStringBase<Text>
 	{

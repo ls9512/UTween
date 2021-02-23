@@ -94,34 +94,13 @@ namespace Aya.Tween
         {
             var assembly = typeof(EaseType).Assembly;
             var space = typeof(EaseType).Namespace;
-            var fieldInfos = typeof(EaseType).GetFields();
-            var fieldsList = new List<FieldInfo>();
-            var attributeList = new List<EnumPropertyAttribute>();
-            foreach (var fieldInfo in fieldInfos)
+            var enumName = nameof(EaseType);
+            var infos = SerializeEnumAttribute.TypeInfosDic[enumName];
+            foreach (var info in infos)
             {
-                var attributes = fieldInfo.GetCustomAttributes(true);
-                foreach (var attribute in attributes)
-                {
-                    if (attribute.GetType() == typeof(EnumPropertyAttribute))
-                    {
-                        var enumPropertyAttribute = attribute as EnumPropertyAttribute;
-                        if (enumPropertyAttribute == null || !enumPropertyAttribute.Display) continue;
-                        fieldsList.Add(fieldInfo);
-                        attributeList.Add(enumPropertyAttribute);
-                    }
-                }
-            }
-
-            for (var i = 0; i < fieldsList.Count; i++)
-            {
-                var fieldInfo = fieldsList[i];
-                var attribute = attributeList[i];
-                var indexValue = (int)fieldInfo.GetValue(null);
-                var displayName = string.IsNullOrEmpty(attribute.DisplayName) ? fieldInfo.Name : attribute.DisplayName;
-
-                ValueNameDic.Add(indexValue, fieldInfo.Name);
-                ValueShowNameDic.Add(indexValue, displayName);
-                NameValueDic.Add(displayName, indexValue);
+                ValueNameDic.Add(info.Index, info.Name);
+                ValueShowNameDic.Add(info.Index, info.DisplayName);
+                NameValueDic.Add(info.DisplayName, info.Index);
             }
 
             foreach (var kv in ValueNameDic)

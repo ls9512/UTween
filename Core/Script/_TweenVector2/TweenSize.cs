@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace Aya.Tween
 {
-	[RequireComponents(typeof(RectTransform))]
+	[RequireComponent(typeof(RectTransform))]
     [Tweener(TweenType.Size)]
     public class TweenSize : TweenVector2Base<RectTransform> 
 	{

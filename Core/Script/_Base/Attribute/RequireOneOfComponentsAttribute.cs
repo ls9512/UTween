@@ -1,6 +1,6 @@
 ﻿/////////////////////////////////////////////////////////////////////////////
 //
-//  Script   : RequireComponentsAttribute.cs
+//  Script   : RequireOneOfComponentsAttribute.cs
 //  Info     : 特性 - 包含至少一个组件
 //  Author   : ls9512 2019
 //  E-mail   : ls9512@vip.qq.com
@@ -13,11 +13,14 @@ using UnityEngine;
 namespace Aya.Tween
 {
     [AttributeUsage(AttributeTargets.Class, AllowMultiple = false)]
-    internal sealed class RequireComponentsAttribute : Attribute
+    internal sealed class RequireOneOfComponentsAttribute : Attribute
     {
         public Type[] Types;
 
-        public RequireComponentsAttribute(params Type[] requiredComponents) { Types = requiredComponents; }
+        public RequireOneOfComponentsAttribute(params Type[] requiredComponents)
+        {
+            Types = requiredComponents;
+        }
 
         /// <summary>
         /// 检查是否包含组件
@@ -39,7 +42,7 @@ namespace Aya.Tween
         /// <returns>结果</returns>
         public static Component Find(Type type, GameObject target)
         {
-            var classAttribute = type.GetCustomAttribute<RequireComponentsAttribute>();
+            var classAttribute = type.GetCustomAttribute<RequireOneOfComponentsAttribute>();
             var types = classAttribute.Types;
             Component ret = null;
             for (var i = 0; i < types.Length; i++)

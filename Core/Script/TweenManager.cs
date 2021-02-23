@@ -93,15 +93,19 @@ namespace Aya.Tween
 
         internal static void CacheTweenTypeDic()
         {
-            var types = Assembly.GetExecutingAssembly().GetTypes();
             var tweenTypes = new List<Type>();
-            for (var i = 0; i < types.Length; i++)
+            var assemblies = AppDomain.CurrentDomain.GetAssemblies();
+            foreach (var assembly in assemblies)
             {
-                var type = types[i];
-                if (!type.IsClass || type.IsAbstract) continue;
-                if (typeof(Tweener).IsAssignableFrom(type))
+                var types = assembly.GetTypes();
+                for (var i = 0; i < types.Length; i++)
                 {
-                    tweenTypes.Add(type);
+                    var type = types[i];
+                    if (!type.IsClass || type.IsAbstract) continue;
+                    if (typeof(Tweener).IsAssignableFrom(type))
+                    {
+                        tweenTypes.Add(type);
+                    }
                 }
             }
 

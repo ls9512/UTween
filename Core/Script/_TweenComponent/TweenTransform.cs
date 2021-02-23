@@ -11,7 +11,7 @@ using UnityEngine;
 
 namespace Aya.Tween
 {
-    [RequireComponents(typeof(Transform))]
+    [RequireComponent(typeof(Transform))]
     [Tweener(TweenType.Transform)]
     public class TweenTransform : Tweener<Transform, Transform>
     {

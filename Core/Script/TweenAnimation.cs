@@ -440,15 +440,41 @@ namespace Aya.Tween
 
         public bool CheckRequireComponent()
         {
-            var requireComponentsAttribute = TweenerType.GetCustomAttribute<RequireComponentsAttribute>();
-            if (requireComponentsAttribute == null)
+            var requireOneOfComponentsAttribute = TweenerType.GetCustomAttribute<RequireOneOfComponentsAttribute>();
+            var requireComponentAttribute = TweenerType.GetCustomAttribute<RequireComponent>();
+            if (requireOneOfComponentsAttribute == null && requireComponentAttribute == null)
             {
                 HasRequireComponent = true;
             }
             else
             {
-                var result = RequireComponentsAttribute.Check(TweenerType, gameObject);
-                HasRequireComponent = result;
+                if (requireOneOfComponentsAttribute != null)
+                {
+                    var result = RequireOneOfComponentsAttribute.Check(TweenerType, gameObject);
+                    HasRequireComponent = result;
+                }
+
+                if (requireComponentAttribute != null)
+                {
+                    var component0 = gameObject.GetComponent(requireComponentAttribute.m_Type0);
+                    if (requireComponentAttribute.m_Type1 == null)
+                    {
+                        HasRequireComponent = component0 != null;
+                    }
+                    else
+                    {
+                        var component1 = gameObject.GetComponent(requireComponentAttribute.m_Type1);
+                        if (requireComponentAttribute.m_Type2 == null)
+                        {
+                            HasRequireComponent = component0 != null && component1 != null;
+                        }
+                        else
+                        {
+                            var component2 = gameObject.GetComponent(requireComponentAttribute.m_Type2);
+                            HasRequireComponent = component0 != null && component1 != null && component2 != null;
+                        }
+                    }
+                }
             }
 
             return HasRequireComponent;
@@ -456,12 +482,37 @@ namespace Aya.Tween
 
         public void FixRequireComponent()
         {
-            var requireComponentsAttribute = TweenerType.GetCustomAttribute<RequireComponentsAttribute>();
-            if (requireComponentsAttribute == null) return;
-            var componentType = requireComponentsAttribute.Types[0];
-            var component = gameObject.GetComponent(componentType);
-            if (component != null) return;
-            gameObject.AddComponent(componentType);
+            var requireOneOfComponentsAttribute = TweenerType.GetCustomAttribute<RequireOneOfComponentsAttribute>();
+            var requireComponentAttribute = TweenerType.GetCustomAttribute<RequireComponent>();
+            if (requireOneOfComponentsAttribute == null && requireComponentAttribute == null) return;
+            if (requireOneOfComponentsAttribute != null)
+            {
+                var componentType = requireOneOfComponentsAttribute.Types[0];
+                var component = gameObject.GetComponent(componentType);
+                if (component != null) return;
+                gameObject.AddComponent(componentType);
+            }
+
+            if (requireComponentAttribute != null)
+            {
+                if (requireComponentAttribute.m_Type0 != null)
+                {
+                    var component = gameObject.GetComponent(requireComponentAttribute.m_Type0);
+                    if(component == null) gameObject.AddComponent(requireComponentAttribute.m_Type0);
+                }
+
+                if (requireComponentAttribute.m_Type1 != null)
+                {
+                    var component = gameObject.GetComponent(requireComponentAttribute.m_Type1);
+                    if (component == null) gameObject.AddComponent(requireComponentAttribute.m_Type1);
+                }
+
+                if (requireComponentAttribute.m_Type2 != null)
+                {
+                    var component = gameObject.GetComponent(requireComponentAttribute.m_Type2);
+                    if (component == null) gameObject.AddComponent(requireComponentAttribute.m_Type2);
+                }
+            }
         }
 
         #endregion

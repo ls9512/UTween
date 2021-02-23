@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace Aya.Tween
 {
-	[RequireComponents(typeof(RectTransform))]
+	[RequireComponent(typeof(RectTransform))]
     [Tweener(TweenType.Width)]
     public class TweenWidth : TweenFloatBase<RectTransform> 
 	{

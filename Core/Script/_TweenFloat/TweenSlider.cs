@@ -7,11 +7,12 @@
 //  E-mail   : ls9512@vip.qq.com
 //
 /////////////////////////////////////////////////////////////////////////////
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Aya.Tween
 {
-	[RequireComponents(typeof(Slider))]
+	[RequireComponent(typeof(Slider))]
     [Tweener(TweenType.Slider)]
     public class TweenSlider : TweenFloatBase<Slider>
 	{

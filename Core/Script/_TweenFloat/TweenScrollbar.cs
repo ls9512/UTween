@@ -7,11 +7,12 @@
 //  E-mail   : ls9512@vip.qq.com
 //
 /////////////////////////////////////////////////////////////////////////////
+using UnityEngine;
 using UnityEngine.UI;
 
 namespace Aya.Tween
 {
-	[RequireComponents(typeof(Scrollbar))]
+	[RequireComponent(typeof(Scrollbar))]
     [Tweener(TweenType.Scrollbar)]
     public class TweenScrollbar : TweenFloatBase<Scrollbar>
 	{

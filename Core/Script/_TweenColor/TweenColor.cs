@@ -12,7 +12,7 @@ using UnityEngine.UI;
 
 namespace Aya.Tween 
 {
-    [RequireComponents(
+    [RequireOneOfComponents(
         typeof(Image),
         typeof(RawImage),
         typeof(Text),
@@ -33,7 +33,7 @@ namespace Aya.Tween
 
         public override void Awake()
         {
-            TargetComponent = RequireComponentsAttribute.Find(typeof(TweenColor), Target);
+            TargetComponent = RequireOneOfComponentsAttribute.Find(typeof(TweenColor), Target);
             base.Awake();
         }
 

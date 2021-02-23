@@ -11,7 +11,7 @@ using Random = UnityEngine.Random;
 
 namespace Aya.Tween
 {
-    [RequireComponents(typeof(Transform))]
+    [RequireComponent(typeof(Transform))]
     [Tweener(TweenType.Shake)]
     public class TweenShake : TweenFloatBase<Transform>
     {

@@ -90,33 +90,12 @@ namespace Aya.Tween
 
         static TweenType()
         {
-            var fieldInfos = typeof(TweenType).GetFields();
-            var fieldsList = new List<FieldInfo>();
-            var attributeList = new List<EnumPropertyAttribute>();
-            foreach (var fieldInfo in fieldInfos)
+            var enumName = nameof(TweenType);
+            var infos = SerializeEnumAttribute.TypeInfosDic[enumName];
+            foreach (var info in infos)
             {
-                var attributes = fieldInfo.GetCustomAttributes(true);
-                foreach (var attribute in attributes)
-                {
-                    if (attribute.GetType() == typeof(EnumPropertyAttribute))
-                    {
-                        var enumPropertyAttribute = attribute as EnumPropertyAttribute;
-                        if (enumPropertyAttribute == null || !enumPropertyAttribute.Display) continue;
-                        fieldsList.Add(fieldInfo);
-                        attributeList.Add(enumPropertyAttribute);
-                    }
-                }
-            }
-
-            for (var i = 0; i < fieldsList.Count; i++)
-            {
-                var fieldInfo = fieldsList[i];
-                var attribute = attributeList[i];
-                var indexValue = (int)fieldInfo.GetValue(null);
-                var displayName = string.IsNullOrEmpty(attribute.DisplayName) ? fieldInfo.Name : attribute.DisplayName;
-
-                ValueTypeDic.Add(indexValue, displayName);
-                TypeValueDic.Add(displayName, indexValue);
+                ValueTypeDic.Add(info.Index, info.DisplayName);
+                TypeValueDic.Add(info.DisplayName, info.Index);
             }
         }
     }

@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace Aya.Tween
 {
-	[RequireComponents(typeof(CanvasGroup))]
+	[RequireComponent(typeof(CanvasGroup))]
     [Tweener(TweenType.CanvasGroupAlpha)]
     public class TweenCanvasGroupAlpha : TweenFloatBase<CanvasGroup>
 	{

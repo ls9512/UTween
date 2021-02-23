@@ -10,7 +10,7 @@ using UnityEngine;
 
 namespace Aya.Tween
 {
-	[RequireComponents(typeof(Transform))]
+	[RequireComponent(typeof(Transform))]
     [Tweener(TweenType.Position)]
     public class TweenPosition : TweenVector3Base<Transform> 
 	{

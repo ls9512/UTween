@@ -13,7 +13,7 @@ using UnityEngine.UI;
 
 namespace Aya.Tween 
 {
-    [RequireComponents(
+    [RequireOneOfComponents(
 		typeof(Button), 
 		typeof(Toggle), 
 		typeof(InputField), 
@@ -31,7 +31,7 @@ namespace Aya.Tween
 
         public override void Awake()
 		{
-			TargetComponent = RequireComponentsAttribute.Find(typeof(TweenColorBlock), Target);
+			TargetComponent = RequireOneOfComponentsAttribute.Find(typeof(TweenColorBlock), Target);
 		    base.Awake();
         }
 
