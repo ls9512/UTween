@@ -5,7 +5,8 @@
 **UTween** is an interpolation animation component for **Unity**. You can quickly configure animations through built-in components or write animations through code.
 
 ![license](https://img.shields.io/github/license/ls9512/UTween)
-[![Release Version](https://img.shields.io/badge/release-1.0.1-red.svg)](https://github.com/ls9512/UTween/releases)
+[![openupm](https://img.shields.io/npm/v/com.ls9512.utween?label=openupm&registry_uri=https://package.openupm.com)](https://openupm.com/packages/com.ls9512.utween/)
+[![Release Version](https://img.shields.io/badge/release-1.0.2-red.svg)](https://github.com/ls9512/UTween/releases)
 ![topLanguage](https://img.shields.io/github/languages/top/ls9512/UTween)
 ![size](https://img.shields.io/github/languages/code-size/ls9512/UTween)
 ![last](https://img.shields.io/github/last-commit/ls9512/UTween)
@@ -22,7 +23,7 @@
 	* 1.1. [Features](#Features)
 	* 1.2. [Environment](#Environment)
 	* 1.3. [Preview](#Preview)
-	* 1.4. [Install](#Install)
+	* 1.4. [Installation](#Installation)
 * 2. [ Parameter](#Parameter)
 * 3. [Built-in Function](#Built-inFunction)
 	* 3.1. [Core](#Core)
@@ -100,11 +101,18 @@ Built-in curve path editor:
 <img src="/Res/UTween_PathEditor.gif"/>
 </div>
 
-###  1.4. <a name='Install'></a>Install
-* 1. Get the full latest version of the repository
-* 2. Delete unnecessary extensions in the `/Extension` folder
-* 3. Decide if you need to delete the `/Example` directory
-* 4. Copy the entire folder to `Assets/Plugins/`
+###  1.4. <a name='Installation'></a>Installation
+* 1. Download the latest [release](https://github.com/ls9512/UTween/releases) version of unitypackage.
+* 2. Install via [OpenUPM](https://github.com/openupm/openupm):
+```
+openupm add com.ls9512.utween
+```
+* 3. Install via [Unity Package Manager - Git URL](https://docs.unity3d.com/Manual/upm-ui-giturl.html):
+```
+"com.ls9512.utween": "git+https://github.com/ls9512/utween"
+```
+* 4. Download the repository source code and install it manually.
+* 5. May be released to AssetStore in the future.
 
 ##  2. <a name='Parameter'></a> Parameter
 * **From**: Starting value for interpolation

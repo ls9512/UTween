@@ -6,7 +6,8 @@
 
 
 ![license](https://img.shields.io/github/license/ls9512/UTween)
-[![Release Version](https://img.shields.io/badge/release-1.0.1-red.svg)](https://github.com/ls9512/UTween/releases)
+[![openupm](https://img.shields.io/npm/v/com.ls9512.utween?label=openupm&registry_uri=https://package.openupm.com)](https://openupm.com/packages/com.ls9512.utween/)
+[![Release Version](https://img.shields.io/badge/release-1.0.2-red.svg)](https://github.com/ls9512/UTween/releases)
 ![topLanguage](https://img.shields.io/github/languages/top/ls9512/UTween)
 ![size](https://img.shields.io/github/languages/code-size/ls9512/UTween)
 ![last](https://img.shields.io/github/last-commit/ls9512/UTween)
@@ -102,10 +103,17 @@
 </div>
 
 ###  1.4. <a name='-1'></a>插件安装
-* 1. 获取该仓库的完整最新版本
-* 2. 删除 `/Extension` 文件夹中不需要的扩展
-* 3. 自行决定是否需要删除 `/Example` 目录
-* 4. 拷贝整个文件夹至 `Assets/Plugins/` 中
+* 1.通过最新的 [release](https://github.com/ls9512/UTween/releases) 版本的 unitypackage 安装。
+* 2.通过 [OpenUPM](https://github.com/openupm/openupm) 安装：
+```
+openupm add com.ls9512.utween
+```
+* 3.通过 [Unity Package Manager - Git URL](https://docs.unity3d.com/Manual/upm-ui-giturl.html)安装：
+```
+"com.ls9512.utween": "git+https://github.com/ls9512/utween"
+```
+* 4.下载仓库源码手动安装。
+* 5.未来可能发布到 AssetStore。
 
 ##  2. <a name='-1'></a> 参数定义
 * **From**: 插值的起始值
