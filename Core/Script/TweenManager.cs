@@ -35,7 +35,7 @@ namespace Aya.Tween
                     Instance = FindObjectOfType<TweenManager>();
                     if (Instance == null)
                     {
-                        var hideFlag = TweenSetting.Ins.ShowManagerObject ? HideFlags.None : HideFlags.HideAndDontSave;
+                        var hideFlag = TweenSetting.Ins.ShowManager ? HideFlags.None : HideFlags.HideAndDontSave;
                         var insName = "UTween";
                         if (!Application.isPlaying)
                         {

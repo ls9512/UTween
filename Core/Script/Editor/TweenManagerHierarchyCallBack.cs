@@ -44,7 +44,7 @@ namespace Aya.Tween
             var check = false;
             var condition1 = go.name.Contains("UTween");
             var count = 0;
-            if (TweenSetting.Ins.ShowTweenAnimationCounter)
+            if (TweenSetting.Ins.ShowCounter)
             {
                 count = go.GetComponentsInChildren<TweenAnimation>(true).Length;
             }

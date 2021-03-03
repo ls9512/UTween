@@ -39,8 +39,8 @@ namespace Aya.Tween
         #endregion
 
         [Header("Hierarchy Setting")]
-        public bool ShowManagerObject = true;
-        public bool ShowTweenAnimationCounter = true;
+        public bool ShowManager = true;
+        public bool ShowCounter = true;
 
         [Header("Default Value")]
         public AnimationCurve DefaultCurve = new AnimationCurve(new Keyframe(0, 0, 1, 1), new Keyframe(1, 1, 1, 1));
