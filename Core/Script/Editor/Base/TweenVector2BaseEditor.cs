@@ -21,10 +21,8 @@ namespace Aya.Tween
         {
             base.DoDrawValue();
             EditorGUILayout.BeginVertical();
-            var fromProperty = TweenParamProperty.FindProperty(TweenKey.FromVector2);
-            fromProperty.vector2Value = EditorGUILayout.Vector2Field("From", fromProperty.vector2Value);
-            var toProperty = TweenParamProperty.FindProperty(TweenKey.ToVector2);
-            toProperty.vector2Value = EditorGUILayout.Vector2Field("To", toProperty.vector2Value);
+            FromVector2Property.vector2Value = EditorGUILayout.Vector2Field("From", FromVector2Property.vector2Value);
+            ToVector2Property.vector2Value = EditorGUILayout.Vector2Field("To", ToVector2Property.vector2Value);
             EditorGUILayout.EndVertical();
         }
 
@@ -33,8 +31,7 @@ namespace Aya.Tween
             base.DoDrawCallback();
             if (!IsCallbackOpen) return false;
 
-            var onValueProperty = TweenParamProperty.FindProperty(TweenKey.OnValueVector2);
-            EditorGUILayout.PropertyField(onValueProperty);
+            EditorGUILayout.PropertyField(OnValueVector2Property);
             return true;
         }
     }

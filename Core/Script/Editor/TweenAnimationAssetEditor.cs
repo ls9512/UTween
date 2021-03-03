@@ -58,7 +58,7 @@ namespace Aya.Tween
             if (Target.Param.Type == TweenType.None)
             {
                 GUILayout.BeginHorizontal();
-                var typeProperty = TweenParamSerializedProperty.FindProperty(TweenKey.Type);
+                var typeProperty = TweenParamSerializedProperty.FindPropertyRelative(TweenKey.Type);
                 EditorGUILayout.PropertyField(typeProperty);
                 EditorGUILayout.LabelField("");
                 GUILayout.EndHorizontal();
@@ -66,9 +66,9 @@ namespace Aya.Tween
             else
             {
                 GUILayout.BeginHorizontal();
-                var typeProperty = TweenParamSerializedProperty.FindProperty(TweenKey.Type);
+                var typeProperty = TweenParamSerializedProperty.FindPropertyRelative(TweenKey.Type);
                 EditorGUILayout.PropertyField(typeProperty);
-                var idProperty = TweenParamSerializedProperty.FindProperty(TweenKey.Identifier);
+                var idProperty = TweenParamSerializedProperty.FindPropertyRelative(TweenKey.Identifier);
                 idProperty.stringValue = EditorGUILayout.TextField(TweenKey.Identifier, idProperty.stringValue);
                 GUILayout.EndHorizontal();
             }

@@ -19,10 +19,8 @@ namespace Aya.Tween
         {
             base.DoDrawValue();
             // EditorGUILayout.BeginHorizontal();
-            var fromProperty = TweenParamProperty.FindProperty(TweenKey.FromStr);
-            fromProperty.stringValue = EditorGUILayout.TextField("From", fromProperty.stringValue);
-            var toProperty = TweenParamProperty.FindProperty(TweenKey.ToStr);
-            toProperty.stringValue = EditorGUILayout.TextField("To", toProperty.stringValue);
+            FromStrProperty.stringValue = EditorGUILayout.TextField("From", FromStrProperty.stringValue);
+            ToStrProperty.stringValue = EditorGUILayout.TextField("To", ToStrProperty.stringValue);
             // EditorGUILayout.EndHorizontal();
         }
 
@@ -31,8 +29,7 @@ namespace Aya.Tween
             base.DoDrawCallback();
             if (!IsCallbackOpen) return false;
 
-            var onValueProperty = TweenParamProperty.FindProperty(TweenKey.OnValueString);
-            EditorGUILayout.PropertyField(onValueProperty);
+            EditorGUILayout.PropertyField(OnValueStringProperty);
             return true;
         }
     }

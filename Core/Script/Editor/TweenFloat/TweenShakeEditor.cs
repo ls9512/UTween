@@ -36,29 +36,15 @@ namespace Aya.Tween
         public override void DoDrawShakeArgs()
         {
             // DrawHeader("Shake Args", Color.cyan, Color.black);
-            var shakeProperty = TweenParamProperty.FindProperty(TweenKey.ShakeArgs);
-            EditorGUILayout.PropertyField(shakeProperty, true);
-//            EditorGUILayout.BeginHorizontal();
-//            TweenComponent.ShakeArgs.ShakePos = EditorGUILayout.Toggle("Shake Pos", TweenComponent.ShakeArgs.ShakePos, GUILayout.Width(LabelWidth + 20));
-//            TweenComponent.ShakeArgs.PowerPos = EditorGUILayout.Vector3Field("", TweenComponent.ShakeArgs.PowerPos);
-//            EditorGUILayout.EndHorizontal();
-//            EditorGUILayout.BeginHorizontal();
-//            TweenComponent.ShakeArgs.ShakeRot = EditorGUILayout.Toggle("Shake Rot", TweenComponent.ShakeArgs.ShakeRot, GUILayout.Width(LabelWidth + 20));
-//            TweenComponent.ShakeArgs.PowerRot = EditorGUILayout.Vector3Field("", TweenComponent.ShakeArgs.PowerRot);
-//            EditorGUILayout.EndHorizontal();
-//            EditorGUILayout.BeginHorizontal();
-//            TweenComponent.ShakeArgs.ShakeScale = EditorGUILayout.Toggle("Shake Scale", TweenComponent.ShakeArgs.ShakeScale, GUILayout.Width(LabelWidth + 20));
-//            TweenComponent.ShakeArgs.PowerScale = EditorGUILayout.Vector3Field("", TweenComponent.ShakeArgs.PowerScale);
-//            EditorGUILayout.EndHorizontal();
-//            TweenComponent.ShakeArgs.Count = EditorGUILayout.IntField("Shake Count", TweenComponent.ShakeArgs.Count);
+            EditorGUILayout.PropertyField(ShakeArgsProperty, true);
         }
 
         public override bool DoDrawAnimationAppend()
         {
             var visible = base.DoDrawAnimationAppend();
             if (!visible) return false;
-            var worldSpaceProperty = TweenParamProperty.FindProperty(TweenKey.WorldSpace);
-            EditorGUILayout.PropertyField(worldSpaceProperty, GUILayout.Width(PropertyWidth));
+
+            EditorGUILayout.PropertyField(WorldSpaceProperty, GUILayout.Width(PropertyWidth));
             return true;
         }
     }

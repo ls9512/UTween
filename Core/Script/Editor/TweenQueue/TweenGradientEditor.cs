@@ -23,10 +23,8 @@ namespace Aya.Tween
         public override void DoDrawValue()
         {
             base.DoDrawValue();
-            var queueProperty = TweenParamProperty.FindProperty(TweenKey.QueueColor);
-            EditorGUILayout.PropertyField(queueProperty, true);
-            var lerpModeProperty = TweenParamProperty.FindProperty(TweenKey.ColorLerpMode);
-            EditorGUILayout.PropertyField(lerpModeProperty, GUILayout.Width(PropertyWidth));
+            EditorGUILayout.PropertyField(QueueColorProperty, true);
+            EditorGUILayout.PropertyField(ColorLerpModeProperty, GUILayout.Width(PropertyWidth));
         }
 
         public override bool DoDrawCallback()
@@ -34,8 +32,7 @@ namespace Aya.Tween
             base.DoDrawCallback();
             if (!IsCallbackOpen) return false;
 
-            var onValueProperty = TweenParamProperty.FindProperty(TweenKey.OnValueColor);
-            EditorGUILayout.PropertyField(onValueProperty);
+            EditorGUILayout.PropertyField(OnValueColorProperty);
             return true;
         }
     }

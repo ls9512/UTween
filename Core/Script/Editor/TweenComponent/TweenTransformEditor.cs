@@ -22,18 +22,15 @@ namespace Aya.Tween
         public override void DoDrawValue()
         {
             base.DoDrawValue();
-            var fromProperty = TweenParamProperty.FindProperty(TweenKey.FromTransform);
-            EditorGUILayout.PropertyField(fromProperty, new GUIContent("From"));
-            var toProperty = TweenParamProperty.FindProperty(TweenKey.ToTransform);
-            EditorGUILayout.PropertyField(toProperty, new GUIContent("To"));
+            EditorGUILayout.PropertyField(FromTransformProperty, new GUIContent("From"));
+            EditorGUILayout.PropertyField(ToTransformProperty, new GUIContent("To"));
         }
 
         public override bool DoDrawAnimationAppend()
         {
             var visible = base.DoDrawAnimationAppend();
             if (!visible) return false;
-            var worldSpaceProperty = TweenParamProperty.FindProperty(TweenKey.WorldSpace);
-            EditorGUILayout.PropertyField(worldSpaceProperty, GUILayout.Width(PropertyWidth));
+            EditorGUILayout.PropertyField(WorldSpaceProperty, GUILayout.Width(PropertyWidth));
             return true;
         }
     }

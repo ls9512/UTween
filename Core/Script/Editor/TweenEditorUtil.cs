@@ -70,15 +70,6 @@ namespace Aya.Tween
                 TweenerEditorTypeDic.Add(tweenType, type);
             }
         }
-
-        #region Extension
-
-        public static SerializedProperty FindProperty(this SerializedProperty property, string propertyName)
-        {
-            return property.FindPropertyRelative(propertyName);
-        }
-
-        #endregion
     }
 }
 #endif

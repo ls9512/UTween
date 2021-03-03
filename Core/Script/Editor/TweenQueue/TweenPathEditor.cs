@@ -246,18 +246,15 @@ namespace Aya.Tween
         public override void DoDrawValue()
         {
             base.DoDrawValue();
-            var queueProperty = TweenParamProperty.FindProperty(TweenKey.QueueVector3);
-            EditorGUILayout.PropertyField(queueProperty, true);
-            var pathModeProperty = TweenParamProperty.FindProperty(TweenKey.PathMode);
-            EditorGUILayout.PropertyField(pathModeProperty, GUILayout.Width(PropertyWidth));
+            EditorGUILayout.PropertyField(QueueVector3Property, true);
+            EditorGUILayout.PropertyField(PathModeProperty, GUILayout.Width(PropertyWidth));
         }
 
         public override bool DoDrawAnimationAppend()
         {
             var visible = base.DoDrawAnimationAppend();
             if (!visible) return false;
-            var worldSpaceProperty = TweenParamProperty.FindProperty(TweenKey.WorldSpace);
-            EditorGUILayout.PropertyField(worldSpaceProperty, GUILayout.Width(PropertyWidth));
+            EditorGUILayout.PropertyField(WorldSpaceProperty, GUILayout.Width(PropertyWidth));
             return true;
         }
 
@@ -266,8 +263,7 @@ namespace Aya.Tween
             base.DoDrawCallback();
             if (!IsCallbackOpen) return false;
 
-            var onValueProperty = TweenParamProperty.FindProperty(TweenKey.OnValueVector3);
-            EditorGUILayout.PropertyField(onValueProperty);
+            EditorGUILayout.PropertyField(OnValueVector3Property);
             return true;
         }
 

@@ -24,8 +24,7 @@ namespace Aya.Tween
         {
             var visible = base.DoDrawAnimationAppend();
             if (!visible) return false;
-            var worldSpaceProperty = TweenParamProperty.FindProperty(TweenKey.WorldSpace);
-            EditorGUILayout.PropertyField(worldSpaceProperty, GUILayout.Width(PropertyWidth));
+            EditorGUILayout.PropertyField(WorldSpaceProperty, GUILayout.Width(PropertyWidth));
             return true;
         }
     }

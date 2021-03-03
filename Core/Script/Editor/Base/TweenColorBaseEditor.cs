@@ -20,13 +20,10 @@ namespace Aya.Tween
         {
             DoDrawTweenHeader();
             EditorGUILayout.BeginHorizontal();
-            var fromProperty = TweenParamProperty.FindProperty(TweenKey.FromColor);
-            fromProperty.colorValue = EditorGUILayout.ColorField("From", fromProperty.colorValue);
-            var toProperty = TweenParamProperty.FindProperty(TweenKey.ToColor);
-            toProperty.colorValue = EditorGUILayout.ColorField("To", toProperty.colorValue);
+            FromColorProperty.colorValue = EditorGUILayout.ColorField("From", FromColorProperty.colorValue);
+            ToColorProperty.colorValue = EditorGUILayout.ColorField("To", ToColorProperty.colorValue);
             EditorGUILayout.EndHorizontal();
-            var lerpModeProperty = TweenParamProperty.FindProperty(TweenKey.ColorLerpMode);
-            EditorGUILayout.PropertyField(lerpModeProperty, GUILayout.Width(PropertyWidth));
+            EditorGUILayout.PropertyField(ColorLerpModeProperty, GUILayout.Width(PropertyWidth));
         }
 
         public override bool DoDrawCallback()
@@ -34,8 +31,7 @@ namespace Aya.Tween
             base.DoDrawCallback();
             if (!IsCallbackOpen) return false;
 
-            var onValueProperty = TweenParamProperty.FindProperty(TweenKey.OnValueColor);
-            EditorGUILayout.PropertyField(onValueProperty);
+            EditorGUILayout.PropertyField(OnValueColorProperty);
             return true;
         }
     }
