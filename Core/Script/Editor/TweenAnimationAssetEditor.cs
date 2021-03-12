@@ -27,10 +27,7 @@ namespace Aya.Tween
             {
                 if (_tweenParamSerializedObject == null)
                 {
-                    if (Target.Param == null)
-                    {
-                        Target.Param = new TweenParam();
-                    }
+                    
 
                     _tweenParamSerializedObject = serializedObject.FindProperty(TweenKey.Param);
                 }

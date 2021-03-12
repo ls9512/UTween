@@ -680,7 +680,7 @@ namespace Aya.Tween
         [ContextMenu("Export Asset...")]
         public void ExportAsset()
         {
-            var path = EditorUtility.SaveFilePanel("Export param to TweenAnimationAsset", Application.dataPath, "Tween_" + TweenType.ValueTypeDic[Param.Type], "asset");
+            var path = EditorUtility.SaveFilePanel("Export param to TweenAnimationAsset", Application.dataPath, "Tween_" + SerializeEnumAttribute.TypeIndexInfoDic[TweenKey.TweenType][Param.Type].Name, "asset");
             path = path.Remove(0, path.IndexOf("Assets", StringComparison.Ordinal));
             var asset = ScriptableObject.CreateInstance<TweenAnimationAsset>();
             asset.Param.CopyFrom(Param);

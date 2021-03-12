@@ -25,7 +25,7 @@ namespace Aya.Tween
             ShowName = showName;
         }
 
-        #region Cache
+        #region Editor Cache
 
         public static Dictionary<string, List<EnumPropertyAttribute>> TypeInfosDic = new Dictionary<string, List<EnumPropertyAttribute>>();
         public static Dictionary<string, Dictionary<string, EnumPropertyAttribute>> TypeNameInfoDic = new Dictionary<string, Dictionary<string, EnumPropertyAttribute>>();

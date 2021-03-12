@@ -6,17 +6,12 @@
 //  E-mail   : ls9512@vip.qq.com
 //
 /////////////////////////////////////////////////////////////////////////////
-using System.Collections.Generic;
-using System.Reflection;
 
 namespace Aya.Tween
 {
     [EnumClass("TweenType")]
     public static class TweenType
     {
-        public static Dictionary<string, int> TypeValueDic { get; set; } = new Dictionary<string, int>();
-        public static Dictionary<int, string> ValueTypeDic { get; set; } = new Dictionary<int, string>();
-
         [EnumProperty]
         public const int None = -1;
 
@@ -87,16 +82,5 @@ namespace Aya.Tween
         [EnumProperty(false)]
         public const int Parallel = 6000;                   // 并行
         // Blender = 7000;                                  // 混合器
-
-        static TweenType()
-        {
-            var enumName = nameof(TweenType);
-            var infos = SerializeEnumAttribute.TypeInfosDic[enumName];
-            foreach (var info in infos)
-            {
-                ValueTypeDic.Add(info.Index, info.DisplayName);
-                TypeValueDic.Add(info.DisplayName, info.Index);
-            }
-        }
     }
 }

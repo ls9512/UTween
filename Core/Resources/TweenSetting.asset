@@ -12,8 +12,8 @@ MonoBehaviour:
   m_Script: {fileID: 11500000, guid: f6665a411bc260e479c734e26cb8fdce, type: 3}
   m_Name: TweenSetting
   m_EditorClassIdentifier: 
-  ShowManagerObject: 1
-  ShowTweenAnimationCounter: 1
+  ShowManager: 1
+  ShowCounter: 1
   DefaultCurve:
     serializedVersion: 2
     m_Curve:

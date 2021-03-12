@@ -24,12 +24,12 @@ namespace Aya.Tween
         {
             DoDrawTweenHeader();
             EditorGUILayout.BeginHorizontal();
-            TweenAnimation.FromColor = EditorGUILayout.ColorField("From", TweenAnimation.FromColor, GUILayout.Width(PropertyWidth));
-            TweenAnimation.ToColor = EditorGUILayout.ColorField("To", TweenAnimation.ToColor, GUILayout.Width(PropertyWidth));
+            FromColorProperty.colorValue = EditorGUILayout.ColorField("From", FromColorProperty.colorValue, GUILayout.Width(PropertyWidth));
+            ToColorProperty.colorValue = EditorGUILayout.ColorField("To", ToColorProperty.colorValue, GUILayout.Width(PropertyWidth));
             EditorGUILayout.EndHorizontal();
             EditorGUILayout.BeginHorizontal();
-            TweenAnimation.ColorLerpMode = (ColorLerpMode)EditorGUILayout.EnumPopup("Lerp Mode", TweenAnimation.ColorLerpMode);
-            TweenAnimation.ColorBlockType = (ColorBlockType)EditorGUILayout.EnumPopup("Block Type", TweenAnimation.ColorBlockType);
+            EditorGUILayout.PropertyField(ColorLerpModeProperty, GUILayout.Width(PropertyWidth));
+            EditorGUILayout.PropertyField(ColorBlockTypeProperty, GUILayout.Width(PropertyWidth));
             EditorGUILayout.EndHorizontal();
         }
     }

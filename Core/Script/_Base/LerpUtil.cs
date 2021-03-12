@@ -64,6 +64,46 @@ namespace Aya.Tween
             return new Color(color.r, color.g, color.b, alpha);
         }
 
+        public static float LerpHue(float h1, float h2, float delta)
+        {
+            var min = h1 < h2 ? h1 : h2;
+            var max = h1 < h2 ? h2 : h1;
+            var diff = max - min;
+            if (diff > 0.5f)
+            {
+                var minD = min;
+                var maxD = 1f - max;
+                var offset = (minD + maxD) * delta;
+                if (h1 < h2)
+                {
+                    var result = minD - offset;
+                    if (result < 0f)
+                    {
+                        result = 1f + result;
+                    }
+
+                    return result;
+                }
+
+                if (h1 > h2)
+                {
+                    var result = maxD + offset;
+                    if (result > 1f)
+                    {
+                        result = result - 1f;
+                    }
+
+                    return result;
+                }
+
+                return min + (max - min) * delta;
+            }
+            else
+            {
+                return min + (max - min) * delta;
+            }
+        }
+
         #endregion
 
         #region Lerp Text

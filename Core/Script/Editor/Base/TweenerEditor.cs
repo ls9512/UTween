@@ -86,6 +86,7 @@ namespace Aya.Tween
         protected SerializedProperty SelfScaleProperty;
         protected SerializedProperty AutoKillProperty;
         protected SerializedProperty ColorLerpModeProperty;
+        protected SerializedProperty ColorBlockTypeProperty;
         protected SerializedProperty WorldSpaceProperty;
         protected SerializedProperty ShakeArgsProperty;
         protected SerializedProperty PathModeProperty;
@@ -142,11 +143,13 @@ namespace Aya.Tween
             ResourceKeyProperty = TweenParamProperty.FindPropertyRelative(TweenKey.ResourcesKey);
             CurveTargetProperty = TweenParamProperty.FindPropertyRelative(TweenKey.CurveTarget);
             CurveModeProperty = TweenParamProperty.FindPropertyRelative(TweenKey.CurveMode);
+
             CurveProperty = TweenParamProperty.FindPropertyRelative(TweenKey.Curve);
             CurveXProperty = TweenParamProperty.FindPropertyRelative(TweenKey.CurveX);
             CurveYProperty = TweenParamProperty.FindPropertyRelative(TweenKey.CurveY);
             CurveZProperty = TweenParamProperty.FindPropertyRelative(TweenKey.CurveZ);
             CurveWProperty = TweenParamProperty.FindPropertyRelative(TweenKey.CurveW);
+
             PlayTypeProperty = TweenParamProperty.FindPropertyRelative(TweenKey.PlayType);
             EaseTypeProperty = TweenParamProperty.FindPropertyRelative(TweenKey.EaseType);
             LoopCountProperty = TweenParamProperty.FindPropertyRelative(TweenKey.LoopCount);
@@ -161,6 +164,7 @@ namespace Aya.Tween
             SelfScaleProperty = TweenParamProperty.FindPropertyRelative(TweenKey.SelfScale);
             AutoKillProperty = TweenParamProperty.FindPropertyRelative(TweenKey.AutoKill);
             ColorLerpModeProperty = TweenParamProperty.FindPropertyRelative(TweenKey.ColorLerpMode);
+            ColorBlockTypeProperty = TweenParamProperty.FindPropertyRelative(TweenKey.ColorBlockType);
             WorldSpaceProperty = TweenParamProperty.FindPropertyRelative(TweenKey.WorldSpace);
             ShakeArgsProperty = TweenParamProperty.FindPropertyRelative(TweenKey.ShakeArgs);
             PathModeProperty = TweenParamProperty.FindPropertyRelative(TweenKey.PathMode);
@@ -381,7 +385,7 @@ namespace Aya.Tween
             // var progressStr = " " + (progressValue * 100).ToString("F1") + "%  " + progressRunTime.ToString("F1") + "/" + progressActualDuration.ToString("F1");
             
             GUI.color = Color.white;
-            var progressStr = " Tween " + TweenType.ValueTypeDic[TweenParam.Type]; ;
+            var progressStr = " Tween " + SerializeEnumAttribute.TypeIndexInfoDic[TweenKey.TweenType][TweenParam.Type].Name;
             GUILayout.Label(progressStr, GUILayout.Height(stateAreaHeight));
             GUI.color = Color.white;
 
@@ -516,7 +520,7 @@ namespace Aya.Tween
             {
                 CurveXProperty.animationCurveValue = EditorGUILayout.CurveField("Curve XYZ", CurveXProperty.animationCurveValue, GUILayout.Width(EditorGUIUtility.labelWidth + CurveWidth), GUILayout.Height(CurveWidth));
                 CurveYProperty.animationCurveValue = EditorGUILayout.CurveField("", CurveYProperty.animationCurveValue, GUILayout.Width(CurveWidth), GUILayout.Height(CurveWidth));
-                CurveYProperty.animationCurveValue = EditorGUILayout.CurveField("", CurveYProperty.animationCurveValue, GUILayout.Width(CurveWidth), GUILayout.Height(CurveWidth));             
+                CurveZProperty.animationCurveValue = EditorGUILayout.CurveField("", CurveZProperty.animationCurveValue, GUILayout.Width(CurveWidth), GUILayout.Height(CurveWidth));             
             }
 
             if (RequireCurveCount == 4 && TweenParam.CurveMode == CurveMode.Independent)
@@ -525,7 +529,6 @@ namespace Aya.Tween
                 CurveYProperty.animationCurveValue = EditorGUILayout.CurveField("", CurveYProperty.animationCurveValue, GUILayout.Width(CurveWidth), GUILayout.Height(CurveWidth));
                 CurveZProperty.animationCurveValue = EditorGUILayout.CurveField("", CurveZProperty.animationCurveValue, GUILayout.Width(CurveWidth), GUILayout.Height(CurveWidth));
                 CurveWProperty.animationCurveValue = EditorGUILayout.CurveField("", CurveWProperty.animationCurveValue, GUILayout.Width(CurveWidth), GUILayout.Height(CurveWidth));
-
             }
 
             GUILayout.EndHorizontal();

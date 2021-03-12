@@ -1,5 +1,4 @@
-﻿using Aya.Extension;
-using UnityEngine;
+﻿using UnityEngine;
 using UnityEngine.UI;
 using Aya.Tween;
 

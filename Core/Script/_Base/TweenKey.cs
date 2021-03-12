@@ -11,6 +11,8 @@ namespace Aya.Tween
 {
     public static partial class TweenKey
     {
+        public static string TweenType = "TweenType";
+
         public static string Type = "Type";
         public static string Param = "Param";
         public static string Identifier = "Identifier";
@@ -40,6 +42,7 @@ namespace Aya.Tween
 
         public static string CurveMode = "CurveMode";
         public static string CurveTarget = "CurveTarget";
+
         public static string Curve = "Curve";
         public static string CurveX = "CurveX";
         public static string CurveY = "CurveY";
