@@ -505,30 +505,40 @@ namespace Aya.Tween
             GUILayout.EndHorizontal();
 
             GUILayout.BeginHorizontal();
+            EditorGUI.BeginChangeCheck();
             if (RequireCurveCount == 1 || TweenParam.CurveMode == CurveMode.Single)
             {
-                CurveProperty.animationCurveValue = EditorGUILayout.CurveField("Curve", CurveProperty.animationCurveValue, GUILayout.Width(EditorGUIUtility.labelWidth + CurveWidth), GUILayout.Height(CurveWidth));
+                TweenParam.Curve = EditorGUILayout.CurveField("Curve", CurveProperty.animationCurveValue, GUILayout.Width(EditorGUIUtility.labelWidth + CurveWidth), GUILayout.Height(CurveWidth));
             }
 
             if (RequireCurveCount == 2 && TweenParam.CurveMode == CurveMode.Independent)
             {
-                CurveXProperty.animationCurveValue = EditorGUILayout.CurveField("Curve XY", CurveXProperty.animationCurveValue, GUILayout.Width(EditorGUIUtility.labelWidth + CurveWidth), GUILayout.Height(CurveWidth));
-                CurveYProperty.animationCurveValue = EditorGUILayout.CurveField("", CurveYProperty.animationCurveValue, GUILayout.Width(CurveWidth), GUILayout.Height(CurveWidth));
+                TweenParam.CurveX = EditorGUILayout.CurveField("Curve XY", CurveXProperty.animationCurveValue, GUILayout.Width(EditorGUIUtility.labelWidth + CurveWidth), GUILayout.Height(CurveWidth));
+                TweenParam.CurveY = EditorGUILayout.CurveField("", CurveYProperty.animationCurveValue, GUILayout.Width(CurveWidth), GUILayout.Height(CurveWidth));
             }
 
             if (RequireCurveCount == 3 && TweenParam.CurveMode == CurveMode.Independent)
             {
-                CurveXProperty.animationCurveValue = EditorGUILayout.CurveField("Curve XYZ", CurveXProperty.animationCurveValue, GUILayout.Width(EditorGUIUtility.labelWidth + CurveWidth), GUILayout.Height(CurveWidth));
-                CurveYProperty.animationCurveValue = EditorGUILayout.CurveField("", CurveYProperty.animationCurveValue, GUILayout.Width(CurveWidth), GUILayout.Height(CurveWidth));
-                CurveZProperty.animationCurveValue = EditorGUILayout.CurveField("", CurveZProperty.animationCurveValue, GUILayout.Width(CurveWidth), GUILayout.Height(CurveWidth));             
+                TweenParam.CurveX = EditorGUILayout.CurveField("Curve XYZ", CurveXProperty.animationCurveValue, GUILayout.Width(EditorGUIUtility.labelWidth + CurveWidth), GUILayout.Height(CurveWidth));
+                TweenParam.CurveY = EditorGUILayout.CurveField("", CurveYProperty.animationCurveValue, GUILayout.Width(CurveWidth), GUILayout.Height(CurveWidth));
+                TweenParam.CurveZ = EditorGUILayout.CurveField("", CurveZProperty.animationCurveValue, GUILayout.Width(CurveWidth), GUILayout.Height(CurveWidth));             
             }
 
             if (RequireCurveCount == 4 && TweenParam.CurveMode == CurveMode.Independent)
             {
-                CurveXProperty.animationCurveValue = EditorGUILayout.CurveField("Curve XYZW", CurveXProperty.animationCurveValue, GUILayout.Width(EditorGUIUtility.labelWidth + CurveWidth), GUILayout.Height(CurveWidth));
-                CurveYProperty.animationCurveValue = EditorGUILayout.CurveField("", CurveYProperty.animationCurveValue, GUILayout.Width(CurveWidth), GUILayout.Height(CurveWidth));
-                CurveZProperty.animationCurveValue = EditorGUILayout.CurveField("", CurveZProperty.animationCurveValue, GUILayout.Width(CurveWidth), GUILayout.Height(CurveWidth));
-                CurveWProperty.animationCurveValue = EditorGUILayout.CurveField("", CurveWProperty.animationCurveValue, GUILayout.Width(CurveWidth), GUILayout.Height(CurveWidth));
+                TweenParam.CurveX = EditorGUILayout.CurveField("Curve XYZW", CurveXProperty.animationCurveValue, GUILayout.Width(EditorGUIUtility.labelWidth + CurveWidth), GUILayout.Height(CurveWidth));
+                TweenParam.CurveY = EditorGUILayout.CurveField("", CurveYProperty.animationCurveValue, GUILayout.Width(CurveWidth), GUILayout.Height(CurveWidth));
+                TweenParam.CurveZ = EditorGUILayout.CurveField("", CurveZProperty.animationCurveValue, GUILayout.Width(CurveWidth), GUILayout.Height(CurveWidth));
+                TweenParam.CurveW = EditorGUILayout.CurveField("", CurveWProperty.animationCurveValue, GUILayout.Width(CurveWidth), GUILayout.Height(CurveWidth));
+            }
+
+            if (EditorGUI.EndChangeCheck())
+            {
+                CurveProperty.animationCurveValue = TweenParam.Curve;
+                CurveXProperty.animationCurveValue = TweenParam.CurveX;
+                CurveYProperty.animationCurveValue = TweenParam.CurveY;
+                CurveZProperty.animationCurveValue = TweenParam.CurveZ;
+                CurveWProperty.animationCurveValue = TweenParam.CurveW;
             }
 
             GUILayout.EndHorizontal();

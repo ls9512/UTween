@@ -62,7 +62,7 @@ namespace Aya.Tween
             DrawTweener();
             EditorGUIUtility.labelWidth = originalLabelWidth;
             serializedObject.ApplyModifiedProperties();
-
+            
             if(Target.Tweener == null) return;
             if (Target.Tweener.IsPlaying)
             {

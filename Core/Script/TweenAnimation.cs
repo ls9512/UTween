@@ -183,6 +183,12 @@ namespace Aya.Tween
             set => Param.CurveZ = value;
         }
 
+        public AnimationCurve CurveW
+        {
+            get => Param.CurveW;
+            set => Param.CurveW = value;
+        }
+
         public PlayType PlayType
         {
             get => Param.PlayType;
