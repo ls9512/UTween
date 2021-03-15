@@ -1,5 +1,5 @@
 <div align="center">    
-<img src="/Res/Logo_1200x284.png" width = "480" height = "112"/>
+<img src="/Image/Logo_1200x284.png" width = "480" height = "112"/>
 </div>
 
 **UTween** is an interpolation animation component for **Unity**. You can quickly configure animations through built-in components or write animations through code.
@@ -72,33 +72,33 @@
 * Good chain programming support.
 
 ###  1.2. <a name='Environment'></a>Environment
-* Unity 2019.4.3f1 and above
-* .Net 4.x
+![Unity: 2019.4.3f1](https://img.shields.io/badge/Unity-2019.4.3f1-blue) 
+![.NET 4.x](https://img.shields.io/badge/.NET-4.x-blue) 
 
 ###  1.3. <a name='Preview'></a>Preview
 Add components and use rich built-in animation and easing functions:
 <div align="center">    
-<img src="/Res/UTween_TwweenType_EaseType.gif"/>
+<img src="/Image/UTween_TwweenType_EaseType.gif"/>
 </div>
 
 Build-in ease functions:
 <div align="center">    
-<img src="/Res/UTween_EaseCurvePreview.gif"/>
+<img src="/Image/UTween_EaseCurvePreview.gif"/>
 </div>
 
 Support each axis independent curve:
 <div align="center">    
-<img src="/Res/UTween_InspectorMultiCurve.png"/>
+<img src="/Image/UTween_InspectorMultiCurve.png"/>
 </div>
 
 The editor previews the animation in real time, what you see is what you get:
 <div align="center">    
-<img src="/Res/UTween_EditorPreview.gif"/>
+<img src="/Image/UTween_EditorPreview.gif"/>
 </div>
 
 Built-in curve path editor:
 <div align="center">    
-<img src="/Res/UTween_PathEditor.gif"/>
+<img src="/Image/UTween_PathEditor.gif"/>
 </div>
 
 ###  1.4. <a name='Installation'></a>Installation

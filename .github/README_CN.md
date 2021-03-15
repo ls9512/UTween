@@ -1,5 +1,5 @@
 <div align="center">    
-<img src="/Res/Logo_1200x284.png" width = "480" height = "112"/>
+<img src="/Image/Logo_1200x284.png" width = "480" height = "112"/>
 </div>
 
 **UTween** 是一个 **Unity** 环境下的插值动画组件，可以通过内置组件快速配置动画，或者通过代码编写动画。
@@ -73,33 +73,33 @@
 * 良好的链式编程支持。
 
 ###  1.2. <a name='-1'></a>环境要求
-* Unity 2019.4.3f1 及以上
-* .Net 4.x
+![Unity: 2019.4.3f1](https://img.shields.io/badge/Unity-2019.4.3f1-blue) 
+![.NET 4.x](https://img.shields.io/badge/.NET-4.x-blue) 
 
 ###  1.3. <a name='-1'></a>功能预览
 添加组件，并使用丰富的内置动画和缓动函数：
 <div align="center">    
-<img src="/Res/UTween_TwweenType_EaseType.gif"/>
+<img src="/Image/UTween_TwweenType_EaseType.gif"/>
 </div>
 
 内置缓动函数：
 <div align="center">    
-<img src="/Res/UTween_EaseCurvePreview.gif"/>
+<img src="/Image/UTween_EaseCurvePreview.gif"/>
 </div>
 
 支持每个轴向独立曲线：
 <div align="center">    
-<img src="Res/UTween_InspectorMultiCurve.png"/>
+<img src="Image/UTween_InspectorMultiCurve.png"/>
 </div>
 
 编辑器实时预览动画，所见即所得：
 <div align="center">    
-<img src="/Res/UTween_EditorPreview.gif"/>
+<img src="/Image/UTween_EditorPreview.gif"/>
 </div>
 
 内置曲线路径编辑器：
 <div align="center">    
-<img src="/Res/UTween_PathEditor.gif"/>
+<img src="/Image/UTween_PathEditor.gif"/>
 </div>
 
 ###  1.4. <a name='-1'></a>插件安装
