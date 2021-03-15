@@ -14,9 +14,8 @@ jobs:
     - name: split upm branch
       run: |
         git branch -d upm &> /dev/null || echo upm branch not found
-        git checkout -b master upm
-        git push -u origin upm
         git checkout upm
+        git push -u origin upm
         if [[ -d "Samples" ]]; then
           git mv Samples Samples~
           rm -f Samples.meta
@@ -32,5 +31,3 @@ jobs:
           git commit -am "fix: Extension => Extension~"
         fi
         git push -f -u origin upm
-      env:
-        PKG_ROOT: ""
