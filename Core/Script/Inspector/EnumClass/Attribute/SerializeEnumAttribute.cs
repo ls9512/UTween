@@ -25,69 +25,56 @@ namespace Aya.Tween
             ShowName = showName;
         }
 
-        #region Editor Cache
+        #region Cache
 
         public static Dictionary<string, List<EnumPropertyAttribute>> TypeInfosDic = new Dictionary<string, List<EnumPropertyAttribute>>();
         public static Dictionary<string, Dictionary<string, EnumPropertyAttribute>> TypeNameInfoDic = new Dictionary<string, Dictionary<string, EnumPropertyAttribute>>();
         public static Dictionary<string, Dictionary<int, EnumPropertyAttribute>> TypeIndexInfoDic = new Dictionary<string, Dictionary<int, EnumPropertyAttribute>>();
 
-        static SerializeEnumAttribute()
+        public static void CacheSerializeEnum(Type type)
         {
-            CacheAllSerializeEnum();
-        }
+            var enumClassAttribute = type.GetCustomAttribute<EnumClassAttribute>();
+            if (enumClassAttribute == null) return;
 
-        public static void CacheAllSerializeEnum()
-        {
-            var assemblies = AppDomain.CurrentDomain.GetAssemblies();
-            foreach (var assembly in assemblies)
+            var enumType = enumClassAttribute.EnumType;
+            var fieldInfos = type.GetFields();
+            foreach (var fieldInfo in fieldInfos)
             {
-                var types = assembly.GetTypes();
-                foreach (var type in types)
+                var enumPropertyAttribute = fieldInfo.GetCustomAttribute<EnumPropertyAttribute>();
+                if (enumPropertyAttribute == null) continue;
+
+                var name = fieldInfo.Name;
+                var index = (int) fieldInfo.GetValue(null);
+                enumPropertyAttribute.Name = name;
+                enumPropertyAttribute.Index = index;
+                if (string.IsNullOrEmpty(enumPropertyAttribute.DisplayName))
                 {
-                    var enumClassAttribute = type.GetCustomAttribute<EnumClassAttribute>();
-                    if (enumClassAttribute == null) continue;
-
-                    var enumType = enumClassAttribute.EnumType;
-                    var fieldInfos = type.GetFields();
-                    foreach (var fieldInfo in fieldInfos)
-                    {
-                        var enumPropertyAttribute = fieldInfo.GetCustomAttribute<EnumPropertyAttribute>();
-                        if (enumPropertyAttribute == null) continue;
-
-                        var name = fieldInfo.Name;
-                        var index = (int)fieldInfo.GetValue(null);
-                        enumPropertyAttribute.Name = name;
-                        enumPropertyAttribute.Index = index;
-                        if (string.IsNullOrEmpty(enumPropertyAttribute.DisplayName))
-                        {
-                            enumPropertyAttribute.DisplayName = name;
-                        }
-
-                        if (!TypeInfosDic.TryGetValue(enumType, out var infoList))
-                        {
-                            infoList = new List<EnumPropertyAttribute>();
-                            TypeInfosDic.Add(enumType, infoList);
-                        }
-
-                        infoList.Add(enumPropertyAttribute);
-
-                        if (!TypeIndexInfoDic.TryGetValue(enumType, out var indexInfoDIc))
-                        {
-                            indexInfoDIc = new Dictionary<int, EnumPropertyAttribute>();
-                            TypeIndexInfoDic.Add(enumType, indexInfoDIc);
-                        }
-
-                        indexInfoDIc.Add(index, enumPropertyAttribute);
-
-                        if (!TypeNameInfoDic.TryGetValue(enumType, out var nameInfoDIc))
-                        {
-                            nameInfoDIc = new Dictionary<string, EnumPropertyAttribute>();
-                            TypeNameInfoDic.Add(enumType, nameInfoDIc);
-                        }
-
-                        nameInfoDIc.Add(name, enumPropertyAttribute);
-                    }
+                    enumPropertyAttribute.DisplayName = name;
                 }
+
+                if (!TypeInfosDic.TryGetValue(enumType, out var infoList))
+                {
+                    infoList = new List<EnumPropertyAttribute>();
+                    TypeInfosDic.Add(enumType, infoList);
+                }
+
+                infoList.Add(enumPropertyAttribute);
+
+                if (!TypeIndexInfoDic.TryGetValue(enumType, out var indexInfoDIc))
+                {
+                    indexInfoDIc = new Dictionary<int, EnumPropertyAttribute>();
+                    TypeIndexInfoDic.Add(enumType, indexInfoDIc);
+                }
+
+                indexInfoDIc.Add(index, enumPropertyAttribute);
+
+                if (!TypeNameInfoDic.TryGetValue(enumType, out var nameInfoDIc))
+                {
+                    nameInfoDIc = new Dictionary<string, EnumPropertyAttribute>();
+                    TypeNameInfoDic.Add(enumType, nameInfoDIc);
+                }
+
+                nameInfoDIc.Add(name, enumPropertyAttribute);
             }
 
             foreach (var kv in TypeInfosDic)

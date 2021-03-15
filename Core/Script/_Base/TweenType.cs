@@ -12,6 +12,16 @@ namespace Aya.Tween
     [EnumClass("TweenType")]
     public static class TweenType
     {
+#if UNITY_EDITOR
+        [UnityEditor.InitializeOnLoadMethod]
+#else
+        [UnityEngine.RuntimeInitializeOnLoadMethod]
+#endif
+        public static void Init()
+        {
+            SerializeEnumAttribute.CacheSerializeEnum(typeof(TweenType));
+        }
+
         [EnumProperty]
         public const int None = -1;
 

@@ -14,6 +14,16 @@ namespace Aya.Tween
     [EnumClass("TweenType")]
     public static class TweenTypeRubyTextMeshPro
     {
+#if UNITY_EDITOR
+        [UnityEditor.InitializeOnLoadMethod]
+#else
+        [UnityEngine.RuntimeInitializeOnLoadMethod]
+#endif
+        public static void Init()
+        {
+            SerializeEnumAttribute.CacheSerializeEnum(typeof(TweenTypeRubyTextMeshPro));
+        }
+
         [EnumProperty("Ruby TextMeshPro", "Ruby TextMeshPro")]
         public const int RubyTextMeshPro = 353;
         [EnumProperty("Ruby TextMeshPro", "Ruby TextMeshPro UGUI")]

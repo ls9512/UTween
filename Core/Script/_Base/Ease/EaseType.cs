@@ -20,6 +20,38 @@ namespace Aya.Tween
         public static Dictionary<int, Type> ValueTypeDic { get; set; } = new Dictionary<int, Type>();
         public static Dictionary<int, EaseFunction> ValueFunctionDic { get; set; } = new Dictionary<int, EaseFunction>();
 
+#if UNITY_EDITOR
+        [UnityEditor.InitializeOnLoadMethod]
+#else
+        [UnityEngine.RuntimeInitializeOnLoadMethod]
+#endif
+        public static void Init()
+        {
+            SerializeEnumAttribute.CacheSerializeEnum(typeof(EaseType));
+
+            var assembly = typeof(EaseType).Assembly;
+            var space = typeof(EaseType).Namespace;
+            var enumName = nameof(EaseType);
+            var infos = SerializeEnumAttribute.TypeInfosDic[enumName];
+
+            foreach (var info in infos)
+            {
+                ValueNameDic.Add(info.Index, info.Name);
+                ValueShowNameDic.Add(info.Index, info.DisplayName);
+                NameValueDic.Add(info.DisplayName, info.Index);
+            }
+
+            foreach (var kv in ValueNameDic)
+            {
+                var typeName = kv.Value;
+                var fullTypeName = space + "." + typeName;
+                var type = assembly.GetType(fullTypeName);
+                ValueTypeDic.Add(kv.Key, type);
+                var function = Activator.CreateInstance(type) as EaseFunction;
+                ValueFunctionDic.Add(kv.Key, function);
+            }
+        }
+
         [EnumProperty]
         public const int Linear = 0;
         [EnumProperty]
@@ -88,29 +120,5 @@ namespace Aya.Tween
         public const int EaseOutElastic = 32;
         [EnumProperty("Elastic", "Ease In Out Elastic")]
         public const int EaseInOutElastic = 33;
-
-        static EaseType()
-        {
-            var assembly = typeof(EaseType).Assembly;
-            var space = typeof(EaseType).Namespace;
-            var enumName = nameof(EaseType);
-            var infos = SerializeEnumAttribute.TypeInfosDic[enumName];
-            foreach (var info in infos)
-            {
-                ValueNameDic.Add(info.Index, info.Name);
-                ValueShowNameDic.Add(info.Index, info.DisplayName);
-                NameValueDic.Add(info.DisplayName, info.Index);
-            }
-
-            foreach (var kv in ValueNameDic)
-            {
-                var typeName = kv.Value;
-                var fullTypeName = space + "." + typeName;
-                var type = assembly.GetType(fullTypeName);
-                ValueTypeDic.Add(kv.Key, type);
-                var function = Activator.CreateInstance(type) as EaseFunction;
-                ValueFunctionDic.Add(kv.Key, function);
-            }
-        }
     }
 }

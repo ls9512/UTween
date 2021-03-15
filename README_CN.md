@@ -7,7 +7,7 @@
 
 ![license](https://img.shields.io/github/license/ls9512/UTween)
 [![openupm](https://img.shields.io/npm/v/com.ls9512.utween?label=openupm&registry_uri=https://package.openupm.com)](https://openupm.com/packages/com.ls9512.utween/)
-[![Release Version](https://img.shields.io/badge/release-1.0.2-red.svg)](https://github.com/ls9512/UTween/releases)
+[![Release Version](https://img.shields.io/badge/release-1.0.3-red.svg)](https://github.com/ls9512/UTween/releases)
 ![topLanguage](https://img.shields.io/github/languages/top/ls9512/UTween)
 ![size](https://img.shields.io/github/languages/code-size/ls9512/UTween)
 ![last](https://img.shields.io/github/last-commit/ls9512/UTween)
@@ -343,6 +343,16 @@ UTween.Create(Asset)
 [EnumClass("EaseType")]
 public static class EaseTypeExtension
 {
+#if UNITY_EDITOR
+	[UnityEditor.InitializeOnLoadMethod]
+#else
+	[UnityEngine.RuntimeInitializeOnLoadMethod]
+#endif
+	public static void Init()
+	{
+		SerializeEnumAttribute.CacheSerializeEnum(typeof(EaseTypeExtension));
+	}
+
 	[EnumProperty("Extension", "Ease Lerp")]
 	public const int EaseLerp = 10001;
 }
@@ -367,6 +377,16 @@ public class EaseLerp : EaseFunction
 [EnumClass("TweenType")]
 public static class TweenTypeExtension
 {
+#if UNITY_EDITOR
+	[UnityEditor.InitializeOnLoadMethod]
+#else
+	[UnityEngine.RuntimeInitializeOnLoadMethod]
+#endif
+	public static void Init()
+	{
+		SerializeEnumAttribute.CacheSerializeEnum(typeof(TweenTypeExtension));
+	}
+
 	[EnumProperty("UI", "Text FontSize")]
 	public const int TextFontSize = 10001;
 }
