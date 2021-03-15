@@ -2,7 +2,7 @@
   "name": "com.ls9512.utween",
   "displayName": "UTween",
   "description": "UTween is an interpolation animation component for Unity. You can quickly configure animations through built-in components or write animations through code.",
-  "version": "1.0.1",
+  "version": "1.1.0",
   "unity": "2019.4.3f1",
   "license": "MIT",
   "repository": {
@@ -21,14 +21,19 @@
   ],
   "samples": [
     {
+      "displayName": "Samples",
+      "description": "Samples",
+      "path": "Samples~"
+    },
+    {
       "displayName": "TextMeshPro Support",
       "description": "TextMeshPro Support",
-      "path": "Extension/TextMeshPro"
+      "path": "Extension~/TextMeshPro"
     },
     {
       "displayName": "RubyTextMeshPro Support",
       "description": "RubyTextMeshPro Support",
-      "path": "Extension/RubyTextMeshPro"
+      "path": "Extension~/RubyTextMeshPro"
     }
   ]
 }
