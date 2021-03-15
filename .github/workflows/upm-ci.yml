@@ -15,10 +15,7 @@ jobs:
       run: |
         git branch -d upm &> /dev/null || echo upm branch not found
         git checkout master
-        git pull
-        git checkout upm
-        git push -u origin upm
-        git checkout upm
+        git checkout -b upm
         if [[ -d "Samples" ]]; then
           git mv Samples Samples~
           rm -f Samples.meta
