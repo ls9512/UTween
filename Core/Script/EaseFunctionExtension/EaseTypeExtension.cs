@@ -12,6 +12,16 @@ namespace Aya.Tween
     [EnumClass("EaseType")]
     public class EaseTypeExtension
     {
+#if UNITY_EDITOR
+        [UnityEditor.InitializeOnLoadMethod]
+#else
+        [UnityEngine.RuntimeInitializeOnLoadMethod]
+#endif
+        public static void Init()
+        {
+            SerializeEnumAttribute.CacheSerializeEnum(typeof(EaseType));
+        }
+
         [EnumProperty("Flash", "Ease Flash 01")]
         public const int EaseFlash01 = 100;
         [EnumProperty("Flash", "Ease Flash 010")]
