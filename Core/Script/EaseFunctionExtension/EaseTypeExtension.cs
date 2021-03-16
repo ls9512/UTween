@@ -19,7 +19,7 @@ namespace Aya.Tween
 #endif
         public static void Init()
         {
-            SerializeEnumAttribute.CacheSerializeEnum(typeof(EaseType));
+            SerializeEnumAttribute.CacheSerializeEnum(typeof(EaseTypeExtension));
         }
 
         [EnumProperty("Flash", "Ease Flash 01")]
