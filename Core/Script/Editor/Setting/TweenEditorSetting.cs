@@ -6,11 +6,13 @@
 //  E-mail   : ls9512@vip.qq.com
 //
 /////////////////////////////////////////////////////////////////////////////
+#if UNITY_EDITOR
+using UnityEditor;
 using UnityEngine;
 
 namespace Aya.Tween
 {
-    [CreateAssetMenu(menuName = "UTween/Tween Setting", fileName = "TweenEditorSetting")]
+    [CreateAssetMenu(menuName = "UTween/Tween Editor Setting", fileName = "TweenEditorSetting")]
     public class TweenEditorSetting : ScriptableObject
     {
         #region Instance
@@ -21,7 +23,7 @@ namespace Aya.Tween
             {
                 if (Instance == null)
                 {
-                    Instance = Load(nameof(TweenEditorSetting));
+                    Instance = FindAsset<TweenEditorSetting>();
                 }
 
                 return Instance;
@@ -30,12 +32,16 @@ namespace Aya.Tween
 
         protected static TweenEditorSetting Instance;
 
-        internal static TweenEditorSetting Load(string fileName)
+        internal static T FindAsset<T>() where T : Object
         {
-            var ins = Resources.Load<TweenEditorSetting>(fileName);
-            return ins;
-        } 
-       
+            var guidList = AssetDatabase.FindAssets("t:" + typeof(T).FullName);
+            if (guidList != null && guidList.Length > 0)
+            {
+                return AssetDatabase.LoadAssetAtPath<T>(AssetDatabase.GUIDToAssetPath(guidList[0]));
+            }
+
+            return null;
+        }
         #endregion
 
         [Header("Icon")]
@@ -45,3 +51,4 @@ namespace Aya.Tween
         public Texture2D IconRefresh;
     }
 }
+#endif
