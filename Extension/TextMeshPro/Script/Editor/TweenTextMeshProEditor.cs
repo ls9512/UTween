@@ -6,8 +6,7 @@
 //  E-mail   : ls9512@vip.qq.com
 //
 /////////////////////////////////////////////////////////////////////////////
-#define TEXTMESHPRO
-#if UNITY_EDITOR && TEXTMESHPRO
+#if UNITY_EDITOR && UTWEEN_TEXTMESHPRO
 
 namespace Aya.Tween
 {

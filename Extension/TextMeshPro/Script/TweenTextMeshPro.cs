@@ -6,8 +6,7 @@
 //  E-mail   : ls9512@vip.qq.com
 //
 /////////////////////////////////////////////////////////////////////////////
-#define TEXTMESHPRO
-#if TEXTMESHPRO
+#if UTWEEN_TEXTMESHPRO
 using UnityEngine;
 using TMPro;
 

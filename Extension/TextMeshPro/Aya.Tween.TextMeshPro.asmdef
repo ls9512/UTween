@@ -11,6 +11,12 @@
     "precompiledReferences": [],
     "autoReferenced": true,
     "defineConstraints": [],
-    "versionDefines": [],
+    "versionDefines": [
+        {
+            "name": "com.unity.textmeshpro",
+            "expression": "1.0.0",
+            "define": "UTWEEN_TEXTMESHPRO"
+        }
+    ],
     "noEngineReferences": false
 }

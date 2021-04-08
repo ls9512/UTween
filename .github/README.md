@@ -6,7 +6,6 @@
 
 ![license](https://img.shields.io/github/license/ls9512/UTween)
 [![openupm](https://img.shields.io/npm/v/com.ls9512.utween?label=openupm&registry_uri=https://package.openupm.com)](https://openupm.com/packages/com.ls9512.utween/)
-[![Release Version](https://img.shields.io/badge/release-1.1.1-red.svg)](https://github.com/ls9512/UTween/releases)
 ![topLanguage](https://img.shields.io/github/languages/top/ls9512/UTween)
 ![size](https://img.shields.io/github/languages/code-size/ls9512/UTween)
 ![last](https://img.shields.io/github/last-commit/ls9512/UTween)
