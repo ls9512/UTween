@@ -292,7 +292,15 @@ namespace Aya.Tween
 
             foreach (var tween in UpdateList)
             {
-                tween.UpdateBehaviour(scaledDeltaTime, smoothDeltaTime, unscaledDeltaTime);
+                try
+                {
+                    tween.UpdateBehaviour(scaledDeltaTime, smoothDeltaTime, unscaledDeltaTime);
+                }
+                catch(Exception exception)
+                {
+                    Debug.LogError(exception);
+                    Remove(tween);
+                }
             }
 
             if (NeedSync)
@@ -311,7 +319,15 @@ namespace Aya.Tween
 
             foreach (var tween in LateUpdateList)
             {
-                tween.LateUpdateBehaviour(scaledDeltaTime, smoothDeltaTime, unscaledDeltaTime);
+                try
+                {
+                    tween.LateUpdateBehaviour(scaledDeltaTime, smoothDeltaTime, unscaledDeltaTime);
+                }
+                catch (Exception exception)
+                {
+                    Debug.LogError(exception);
+                    Remove(tween);
+                }
             }
 
             if (NeedSync)
@@ -330,7 +346,15 @@ namespace Aya.Tween
 
             foreach (var tween in FixedUpdateList)
             {
-                tween.FixedUpdateBehaviour(scaledDeltaTime, smoothDeltaTime, unscaledDeltaTime);
+                try
+                {
+                    tween.FixedUpdateBehaviour(scaledDeltaTime, smoothDeltaTime, unscaledDeltaTime);
+                }
+                catch (Exception exception)
+                {
+                    Debug.LogError(exception);
+                    Remove(tween);
+                }
             }
 
             if (NeedSync)
