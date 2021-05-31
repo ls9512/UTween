@@ -1,7 +1,7 @@
 ﻿using UnityEngine;
 using Aya.Tween;
 
-namespace Aya.Example
+namespace Aya.Sample
 {
     public class TweenEaseCurvePreviewUGUI : MonoBehaviour
     {

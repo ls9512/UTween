@@ -2,7 +2,7 @@
 using UnityEngine.UI;
 using Aya.Tween;
 
-namespace Aya.Example
+namespace Aya.Sample
 {
     public class TweenEaseCurveItem : MonoBehaviour
     {
