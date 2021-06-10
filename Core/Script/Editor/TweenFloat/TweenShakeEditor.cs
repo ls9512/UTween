@@ -22,8 +22,9 @@ namespace Aya.Tween
 
         public override void DoDrawValue()
         {
-            var typeProperty = TweenParam.Type;
-            DrawHeader("Tween " + typeProperty, Color.cyan, Color.black);
+            // var typeProperty = TweenParam.Type;
+            // DrawHeader("Tween " + typeProperty, Color.cyan, Color.black);
+            DoDrawPlayState();
             // 隐藏 From To
         }
 
