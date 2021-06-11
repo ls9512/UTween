@@ -28,26 +28,26 @@ namespace Aya.Tween
             }
         }
 
-        public override void SetCurrent2From()
+        internal override void SetCurrent2From()
         {
-            From = WorldSpace ? Transform.eulerAngles : Transform.localEulerAngles;
+            TweenAnimation.FromVector3 = WorldSpace ? Transform.eulerAngles : Transform.localEulerAngles;
         }
 
-        public override void SetCurrent2To()
+        internal override void SetCurrent2To()
         {
-            To = WorldSpace ? Transform.eulerAngles : Transform.localEulerAngles;
+            TweenAnimation.ToVector3 = WorldSpace ? Transform.eulerAngles : Transform.localEulerAngles;
         }
 
-        public override void SetFrom2Current()
+        internal override void SetFrom2Current()
         {
-            if (WorldSpace) Transform.eulerAngles = From;
-            else Transform.localEulerAngles = From;
+            if (WorldSpace) Transform.eulerAngles = TweenAnimation.FromVector3;
+            else Transform.localEulerAngles = TweenAnimation.FromVector3;
         }
 
-        public override void SetTo2Current()
+        internal override void SetTo2Current()
         {
-            if (WorldSpace) Transform.eulerAngles = To;
-            else Transform.localEulerAngles = To;
+            if (WorldSpace) Transform.eulerAngles = TweenAnimation.ToVector3;
+            else Transform.localEulerAngles = TweenAnimation.ToVector3;
         }
     }
 }

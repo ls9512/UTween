@@ -94,24 +94,24 @@ namespace Aya.Tween
             ResourcesKey = "_MainTex";
         }
 
-        public override void SetCurrent2From()
+        internal override void SetCurrent2From()
         {
-            From = GetOffset();
+            TweenAnimation.FromVector2 = GetOffset();
         }
 
-        public override void SetCurrent2To()
+        internal override void SetCurrent2To()
         {
-            To = GetOffset();
+            TweenAnimation.ToVector2 = GetOffset();
         }
 
-        public override void SetFrom2Current()
+        internal override void SetFrom2Current()
         {
-            SetOffset(From);
+            SetOffset(TweenAnimation.FromVector2);
         }
 
-        public override void SetTo2Current()
+        internal override void SetTo2Current()
         {
-            SetOffset(To);
+            SetOffset(TweenAnimation.ToVector2);
         }
     }
 }

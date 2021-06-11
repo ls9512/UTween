@@ -72,24 +72,24 @@ namespace Aya.Tween
             _setValue(value);
         }
 
-        public override void SetCurrent2From()
+        internal override void SetCurrent2From()
         {
-            From = _getValue();
+            TweenAnimation.FromColor = _getValue();
         }
 
-        public override void SetCurrent2To()
+        internal override void SetCurrent2To()
         {
-            To = _getValue();
+            TweenAnimation.ToColor = _getValue();
         }
 
-        public override void SetFrom2Current()
+        internal override void SetFrom2Current()
         {
-            _setValue(From);
+            _setValue(TweenAnimation.FromColor);
         }
 
-        public override void SetTo2Current()
+        internal override void SetTo2Current()
         {
-            _setValue(To);
+            _setValue(TweenAnimation.ToColor);
         }
     }
 }

@@ -21,24 +21,24 @@ namespace Aya.Tween
 			Component.sizeDelta = value;
 		}
 
-		public override void SetCurrent2From()
+        internal override void SetCurrent2From()
 		{
-			From = Component.sizeDelta;
+            TweenAnimation.FromVector2 = Component.sizeDelta;
 		}
 
-		public override void SetCurrent2To() 
+        internal override void SetCurrent2To() 
 		{
-			To = Component.sizeDelta;
+            TweenAnimation.ToVector2 = Component.sizeDelta;
 		}
 
-		public override void SetFrom2Current()
+        internal override void SetFrom2Current()
 		{
-		    Component.sizeDelta = From;
+		    Component.sizeDelta = TweenAnimation.FromVector2;
 		}
 
-		public override void SetTo2Current()
+        internal override void SetTo2Current()
         {
-		    Component.sizeDelta = To;
+		    Component.sizeDelta = TweenAnimation.ToVector2;
 		}
 	}
 }

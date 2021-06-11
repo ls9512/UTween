@@ -70,24 +70,24 @@ namespace Aya.Tween
             SetValue(factor);
         }
 
-        public override void SetCurrent2From()
+        internal override void SetCurrent2From()
         {
-            CopyTrans(From, Transform, WorldSpace);
+            CopyTrans(TweenAnimation.FromTransform, Transform, WorldSpace);
         }
 
-        public override void SetCurrent2To()
+        internal override void SetCurrent2To()
         {
-            CopyTrans(To, Transform, WorldSpace);
+            CopyTrans(TweenAnimation.ToTransform, Transform, WorldSpace);
         }
 
-        public override void SetFrom2Current()
+        internal override void SetFrom2Current()
         {
-            CopyTrans(Transform, From, WorldSpace);
+            CopyTrans(Transform, TweenAnimation.FromTransform, WorldSpace);
         }
 
-        public override void SetTo2Current()
+        internal override void SetTo2Current()
         {
-            CopyTrans(Transform, To, WorldSpace);
+            CopyTrans(Transform, TweenAnimation.ToTransform, WorldSpace);
         }
 
         protected static Vector3 Clerp(Vector3 start, Vector3 end, float delta)

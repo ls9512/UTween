@@ -49,25 +49,25 @@ namespace Aya.Tween
             ResourcesKey = "";
         }
 
-        public override void SetCurrent2From()
+        internal override void SetCurrent2From()
         {
-            From = Component.sharedMaterials[ResourcesIndex].GetFloat(ResourcesKey);
+            TweenAnimation.FromFloat = Component.sharedMaterials[ResourcesIndex].GetFloat(ResourcesKey);
         }
 
-        public override void SetCurrent2To()
+        internal override void SetCurrent2To()
         {
-            To = Component.sharedMaterials[ResourcesIndex].GetFloat(ResourcesKey);
+            TweenAnimation.ToFloat = Component.sharedMaterials[ResourcesIndex].GetFloat(ResourcesKey);
         }
 
-        public override void SetFrom2Current()
+        internal override void SetFrom2Current()
         {
-            MaterialPropertyBlock.SetFloat(ResourcesKey, From);
+            MaterialPropertyBlock.SetFloat(ResourcesKey, TweenAnimation.FromFloat);
             Component.SetPropertyBlock(MaterialPropertyBlock, ResourcesIndex);
         }
 
-        public override void SetTo2Current()
+        internal override void SetTo2Current()
         {
-            MaterialPropertyBlock.SetFloat(ResourcesKey, To);
+            MaterialPropertyBlock.SetFloat(ResourcesKey, TweenAnimation.ToFloat);
             Component.SetPropertyBlock(MaterialPropertyBlock, ResourcesIndex);
         }
     }

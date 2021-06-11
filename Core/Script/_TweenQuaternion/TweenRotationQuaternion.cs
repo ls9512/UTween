@@ -28,26 +28,26 @@ namespace Aya.Tween
             }
         }
 
-        public override void SetCurrent2From()
+        internal override void SetCurrent2From()
         {
-            From = WorldSpace ? Transform.rotation : Transform.localRotation;
+            TweenAnimation.FromQuaternion = WorldSpace ? Transform.rotation : Transform.localRotation;
         }
 
-        public override void SetCurrent2To()
+        internal override void SetCurrent2To()
         {
-            To = WorldSpace ? Transform.rotation : Transform.localRotation;
+            TweenAnimation.ToQuaternion = WorldSpace ? Transform.rotation : Transform.localRotation;
         }
 
-        public override void SetFrom2Current()
+        internal override void SetFrom2Current()
         {
-            if (WorldSpace) Transform.rotation = From;
-            else Transform.localRotation = From;
+            if (WorldSpace) Transform.rotation = TweenAnimation.FromQuaternion;
+            else Transform.localRotation = TweenAnimation.FromQuaternion;
         }
 
-        public override void SetTo2Current()
+        internal override void SetTo2Current()
         {
-            if (WorldSpace) Transform.rotation = To;
-            else Transform.localRotation = To;
+            if (WorldSpace) Transform.rotation = TweenAnimation.ToQuaternion;
+            else Transform.localRotation = TweenAnimation.ToQuaternion;
         }
     }
 }

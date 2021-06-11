@@ -21,24 +21,24 @@ namespace Aya.Tween
             Component.anchoredPosition = value;
         }
 
-        public override void SetCurrent2From()
+        internal override void SetCurrent2From()
         {
-            From = Component.anchoredPosition;
+            TweenAnimation.FromVector2 = Component.anchoredPosition;
         }
 
-        public override void SetCurrent2To()
+        internal override void SetCurrent2To()
         {
-            To = Component.anchoredPosition;
+            TweenAnimation.ToVector2 = Component.anchoredPosition;
         }
 
-        public override void SetFrom2Current()
+        internal override void SetFrom2Current()
         {
-            Component.anchoredPosition = From;
+            Component.anchoredPosition = TweenAnimation.FromVector2;
         }
 
-        public override void SetTo2Current()
+        internal override void SetTo2Current()
         {
-            Component.anchoredPosition = To;
+            Component.anchoredPosition = TweenAnimation.ToVector2;
         }
     }
 }

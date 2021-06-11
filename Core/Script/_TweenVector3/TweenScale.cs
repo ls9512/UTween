@@ -21,24 +21,24 @@ namespace Aya.Tween
 		    Transform.localScale = value;
 		}
 
-	    public override void SetCurrent2From()
+	    internal override void SetCurrent2From()
 	    {
-	        From = Transform.localScale;
+	        TweenAnimation.FromVector3 = Transform.localScale;
 	    }
 
-	    public override void SetCurrent2To()
+        internal override void SetCurrent2To()
 	    {
-	        To = Transform.localScale;
+	        TweenAnimation.ToVector3 = Transform.localScale;
 	    }
 
-	    public override void SetFrom2Current()
+        internal override void SetFrom2Current()
 	    {
-	        Transform.localScale = From;
+	        Transform.localScale = TweenAnimation.FromVector3;
 	    }
 
-	    public override void SetTo2Current()
+        internal override void SetTo2Current()
 	    {
-	        Transform.localScale = To;
+	        Transform.localScale = TweenAnimation.ToVector3;
 	    }
 	}
 }

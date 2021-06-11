@@ -1,4 +1,4 @@
-﻿\/////////////////////////////////////////////////////////////////////////////
+﻿/////////////////////////////////////////////////////////////////////////////
 //
 //  Script   : Tweener.cs
 //  Info     : 插值类基类
@@ -960,7 +960,7 @@ namespace Aya.Tween
         /// <summary>
         /// 设置当前状态值到 From
         /// </summary>
-        public virtual void SetCurrent2From()
+        internal virtual void SetCurrent2From()
         {
 
         }
@@ -968,7 +968,7 @@ namespace Aya.Tween
         /// <summary>
         /// 设置当前状态值到 To
         /// </summary>
-        public virtual void SetCurrent2To()
+        internal virtual void SetCurrent2To()
         {
 
         }
@@ -976,7 +976,7 @@ namespace Aya.Tween
         /// <summary>
         /// 设置 From 值到当前状态
         /// </summary>
-        public virtual void SetFrom2Current()
+        internal virtual void SetFrom2Current()
         {
 
         }
@@ -984,7 +984,7 @@ namespace Aya.Tween
         /// <summary>
         /// 设置 To 值到当前状态
         /// </summary>
-        public virtual void SetTo2Current()
+        internal virtual void SetTo2Current()
         {
 
         }

@@ -21,24 +21,24 @@ namespace Aya.Tween
 			Component.volume = value;
 		}
 
-		public override void SetCurrent2From()
+        internal override void SetCurrent2From()
 		{
-			From = Component.volume;
+            TweenAnimation.FromFloat = Component.volume;
 		}
 
-		public override void SetCurrent2To()
+        internal override void SetCurrent2To()
 		{
-			To = Component.volume;
+            TweenAnimation.ToFloat = Component.volume;
 		}
 
-		public override void SetFrom2Current()
+        internal override void SetFrom2Current()
 		{
-			Component.volume = From;
+			Component.volume = TweenAnimation.FromFloat;
 		}
 
-		public override void SetTo2Current()
+        internal override void SetTo2Current()
 		{
-			Component.volume = To;
+			Component.volume = TweenAnimation.ToFloat;
 		}
 	}
 }

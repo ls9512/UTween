@@ -28,26 +28,26 @@ namespace Aya.Tween
 			}
 		}
 
-		public override void SetCurrent2From()
+		internal override void SetCurrent2From()
 		{
-			From = WorldSpace ? Transform.position : Transform.localPosition;
+            TweenAnimation.FromVector3 = WorldSpace ? Transform.position : Transform.localPosition;
+        }
+
+        internal override void SetCurrent2To()
+		{
+            TweenAnimation.ToVector3 = WorldSpace ? Transform.position : Transform.localPosition;
 		}
 
-		public override void SetCurrent2To()
+        internal override void SetFrom2Current()
 		{
-			To = WorldSpace ? Transform.position : Transform.localPosition;
+            if (WorldSpace) Transform.position = TweenAnimation.FromVector3;
+			else Transform.localPosition = TweenAnimation.FromVector3;
 		}
 
-		public override void SetFrom2Current()
+        internal override void SetTo2Current()
 		{
-            if (WorldSpace) Transform.position = From;
-			else Transform.localPosition = From;
-		}
-
-		public override void SetTo2Current()
-		{
-            if (WorldSpace) Transform.position = To;
-			else Transform.localPosition = To;
+            if (WorldSpace) Transform.position = TweenAnimation.ToVector3;
+			else Transform.localPosition = TweenAnimation.ToVector3;
 		}
 	}
 }
