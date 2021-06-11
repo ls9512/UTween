@@ -1,4 +1,4 @@
-﻿/////////////////////////////////////////////////////////////////////////////
+﻿\/////////////////////////////////////////////////////////////////////////////
 //
 //  Script   : Tweener.cs
 //  Info     : 插值类基类
@@ -743,14 +743,10 @@ namespace Aya.Tween
             if (Application.isPlaying && TweenAnimation != null)
             {
                 TweenAnimation.Tweener = null;
+                TweenManager.Ins?.Remove(this, true);
                 if (AutoKill && destroy)
                 {
-                    TweenManager.Ins?.Remove(this, true);
                     Object.Destroy(TweenAnimation);
-                }
-                else
-                {
-                    TweenManager.Ins?.Remove(this, false);
                 }
             }
             else
