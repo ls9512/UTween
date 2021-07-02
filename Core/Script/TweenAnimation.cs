@@ -16,6 +16,7 @@ using UnityEngine;
 
 namespace Aya.Tween
 {
+    [AddComponentMenu("UTween/Tween Animation")]
     [ExecuteInEditMode]
     public class TweenAnimation : MonoBehaviour
     {
