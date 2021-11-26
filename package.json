@@ -3,7 +3,7 @@
   "displayName": "UTween",
   "description": "UTween is an interpolation animation component for Unity. You can quickly configure animations through built-in components or write animations through code.",
   "version": "1.1.4",
-  "unity": "2019.4.3f1",
+  "unity": "2019.4",
   "license": "MIT",
   "repository": {
     "type": "git",
